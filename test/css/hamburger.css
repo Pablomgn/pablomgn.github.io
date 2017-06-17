@@ -1,0 +1,85 @@
+/* Reset */
+.navbar-toggle {
+
+  width: 30px;
+  height: 30px;
+
+}
+
+.c-hamburger:focus {
+  outline: none;
+}
+
+
+/* The hamburger */
+
+.navbar-toggle span {
+  display: block;
+  position: absolute;
+  left: 18%;
+  right: 18%;
+  height: 10%;
+  background: white;
+}
+
+.navbar-toggle span::before,
+.navbar-toggle span::after {
+  position: absolute;
+  display: block;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #fff;
+  content: "";
+}
+
+.navbar-toggle span::before {
+  top: -7px;
+}
+
+.navbar-toggle span::after {
+  bottom: -7px;
+}
+
+/* Second */
+
+
+
+.navbar-toggle span {
+  transition: background 0s 0.3s;
+}
+
+.navbar-toggle span::before,
+.navbar-toggle span::after {
+  transition-duration: 0.3s, 0.3s;
+  transition-delay: 0.3s, 0s;
+}
+
+.navbar-toggle span::before {
+  transition-property: top, transform;
+}
+
+.navbar-toggle span::after {
+  transition-property: bottom, transform;
+}
+
+/* active state, i.e. menu open */
+
+.navbar-toggle.is-active span {
+  background: none;
+}
+
+.navbar-toggle.is-active span::before {
+  top: 0;
+  transform: rotate(45deg);
+}
+
+.navbar-toggle.is-active span::after {
+  bottom: 0;
+  transform: rotate(-45deg);
+}
+
+.navbar-toggle.is-active span::before,
+.navbar-toggle.is-active span::after {
+  transition-delay: 0s, 0.3s;
+}
