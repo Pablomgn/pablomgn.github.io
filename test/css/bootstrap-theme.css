@@ -30,18 +30,44 @@ body
 
     .navbar-inverse
         {
-            background-color:  #222;
+            background-color:  #fff;
+            padding: 10px 0 5px 0;
+            opacity: 0.95;
         }
+
+    .navbar-inverse .navbar-brand 
+    {
+        color: #222;
+        font-weight: 700;
+        font-size: 25px;
+    }
+
+    .navbar-inverse .navbar-brand:hover 
+        {
+            color: #ccc;
+        }
+
+    a {     
+        transition: color 0.3s linear; /* vendorless fallback */
+        -o-transition: color 0.3s linear; /* opera */
+        -ms-transition: color 0.3s linear; /* IE 10 */
+        -moz-transition: color 0.3s linear; /* Firefox */
+        -webkit-transition: color 0.3s linear; /*safari and chrome */
+    }
+
+    .navbar-inverse .navbar-nav>li>a
+    {
+    color: #222;
+    }
+
+    .navbar-inverse .navbar-nav>li>a:focus, .navbar-inverse .navbar-nav>li>a:hover
+    {
+    color: #ccc;
+    }
 
     .navbar-inverse, .navbar-inverse .navbar-collapse, .navbar-inverse .navbar-form, .navbar-inner, .navbar-inverse .navbar-toggle
     {
         border: none;
-    }
-
-    .navbar-inverse .navbar-brand 
-    {
-        color: white;
-        font-weight: 700;
     }
 
     /* Navbar Button Start*/
@@ -97,6 +123,25 @@ body
 }
 
 /* Cols end */
+.title
+{
+    font-size: 36px;
+    text-align: center;
+    font-weight: 700;
+    margin-top: 70px;
+    margin-bottom: 50px;
+}
+
+.big-text
+{
+    font-size: 20px;
+    text-align: center;
+}
+
+#about-me
+{
+    position: relative;
+}
 
 .jumbotron
 {
@@ -113,6 +158,7 @@ body
     background-color: #222;
     border: none;
 }
+
 
 .btn-primary:hover
 {
@@ -149,7 +195,7 @@ body
 .main-footer 
 {
     width: 100%;
-    padding: 50px;
+    padding: 50px 15px 15px 15px;
     color: white;
     background-color: #222;
 }

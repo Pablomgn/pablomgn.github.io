@@ -4,15 +4,6 @@
     overflow: hidden
 }
 
-.gallery-title
-{
-    font-size: 36px;
-    text-align: center;
-    font-weight: 700;
-    margin-top: 70px;
-    margin-bottom: 50px;
-}
-
 .grid-item-content 
 {
     width: 100%;
@@ -34,20 +25,14 @@
   bottom: 0;
   left: 5px;
   right: 0;
-  height: 0%;
   width: calc(100% - 10px);
-  opacity: 0.7;
   transition: .5s ease;
-  background-color: #222;
-}
-
-.overlay .text{
-    transition: .2s ease;
-  opacity: 0;
+  background-color: #fff;
+         opacity: 0;
 }
 
 .grid-item:hover .overlay {
-  height: 100%;
+     opacity: 0.9;
 }
 
 .grid-item:hover .text {
@@ -55,7 +40,7 @@
 }
 
 .text {
-  color: white;
+  color: #222;
   font-size: 20px;
   position: absolute;
   top: 50%;
