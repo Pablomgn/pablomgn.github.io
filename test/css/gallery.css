@@ -6,11 +6,8 @@
 .grid-item-content 
 {
     width: 100%;
-    background: #222;
-    opacity: 0;
-    transition: 1;
-    opacity: 1;
     box-shadow: 0px 2px 6px rgba(0,0,0,0.2);
+        border-radius: 3px;
 
 }
 
@@ -25,23 +22,22 @@
   bottom: 0;
   left: 5px;
   right: 0;
+    border-radius: 3px;
   width: calc(100% - 10px);
     height: calc(100% - 10px);
   transition: .5s ease;
-  background-color: #fff;
-         opacity: 0;
+  background-color: #222;
+    background-color: rgba(2,2,2,0.5);
+        opacity: 0;
 }
 
 .grid-item:hover .overlay {
-     opacity: 0.9;
+     opacity: 1;
 }
 
-.grid-item:hover .text {
-  opacity: 1;
-}
 
 .text {
-  color: #222;
+  color: white;
   font-size: 20px;
   position: absolute;
   top: 50%;
