@@ -1,13 +1,12 @@
 .grid-item
 {
-    transition: .5s ease;
     padding-bottom: 10px;
 }
 
 .grid-item-content 
 {
     width: 100%;
-    box-shadow: 0px 2px 6px rgba(0,0,0,0.1);
+    box-shadow: 0px 2px 6px rgba(0,0,0,0.2);
     border-radius: 3px;
 
 }
@@ -34,13 +33,6 @@
 
 .grid-item:hover .grid-overlay {
     opacity: 1;
-}
-
-.grid-item:hover {
-    z-index: 10;
-  -moz-transform: scale(1.05);
-  -webkit-transform: scale(1.05);
-  transform: scale(1.05);
 }
 
 #fullscreen-overlay {
