@@ -5,7 +5,7 @@ html
 
 body 
 {
-   font-family: 'Roboto', sans-serif;
+    font-family: 'Roboto', sans-serif;
     height: 100%;
 }
 
@@ -27,102 +27,100 @@ a:hover, a:active, a:focus
 
 /*Navbar start*/
 
-    .navbar-collapse 
-    {
-        -webkit-box-shadow: none;
-        box-shadow: none;
-    }
+.navbar-collapse 
+{
+    -webkit-box-shadow: none;
+    box-shadow: none;
+}
 
-    .navbar-inverse
-        {
-            transition: .5s ease;
-            background-color:  #fff;
-            padding: 5px 0 0px 0;
-            box-shadow: 0px 4px 10px rgba(0,0,0, 0.1);
-        }
+.navbar-inverse
+{
+    background-color:  #fff;
+    padding: 5px 0 0px 0;
+    box-shadow: 0px 4px 10px rgba(0,0,0, 0.1);
+}
 
-    .navbar-inverse:hover
-        {
-            padding: 5px 0 10px 0;
-            
-        }
-
-    .navbar-inverse .navbar-brand, .navbar-inverse .navbar-brand:focus, .navbar-inverse .navbar-brand:active
-    {
-        color: #222;
-        font-weight: 700;
-        font-size: 18px;
-    }
-
-    .navbar-inverse .navbar-brand:hover 
-        {
-            color: #ccc;
-        }
-
-    a {     
-        transition: color 0.3s linear; /* vendorless fallback */
-        -o-transition: color 0.3s linear; /* opera */
-        -ms-transition: color 0.3s linear; /* IE 10 */
-        -moz-transition: color 0.3s linear; /* Firefox */
-        -webkit-transition: color 0.3s linear; /*safari and chrome */
-    }
-
-    .navbar-inverse .navbar-nav>li>a,   .navbar-inverse .navbar-nav>li>a:focus
-    {
+.navbar-inverse .navbar-brand, .navbar-inverse .navbar-brand:focus, .navbar-inverse .navbar-brand:active
+{
     color: #222;
-    }
+    font-weight: 700;
+    font-size: 18px;
+}
 
-    .navbar-inverse .navbar-nav>li>a:hover
-    {
+.navbar-inverse .navbar-brand:hover 
+{
     color: #ccc;
-    }
+}
 
-    .navbar-inverse, .navbar-inverse .navbar-collapse, .navbar-inverse .navbar-form, .navbar-inner, .navbar-inverse .navbar-toggle
+a {     
+    transition: color 0.3s linear; /* vendorless fallback */
+    -o-transition: color 0.3s linear; /* opera */
+    -ms-transition: color 0.3s linear; /* IE 10 */
+    -moz-transition: color 0.3s linear; /* Firefox */
+    -webkit-transition: color 0.3s linear; /*safari and chrome */
+}
+
+.navbar-inverse .navbar-nav>li>a,   .navbar-inverse .navbar-nav>li>a:focus
+{
+    color: #222;
+}
+
+.navbar-inverse .navbar-nav>li>a:hover
+{
+    color: #ccc;
+}
+
+.navbar-inverse, .navbar-inverse .navbar-collapse, .navbar-inverse .navbar-form, .navbar-inner, .navbar-inverse .navbar-toggle
+{
+    border: none;
+}
+
+/* Navbar Button Start*/
+.navbar-inverse .navbar-toggle, .navbar-inverse .navbar-toggle:hover, .navbar-inverse .navbar-toggle:focus
+{
+    background-color: transparent;
+}
+
+/* Navbar Button End*/
+
+@media screen and (min-width: 768px)
+{
+    .navbar-nav 
     {
-        border: none;
+        float: right;
     }
+}
 
-    /* Navbar Button Start*/
-    .navbar-inverse .navbar-toggle, .navbar-inverse .navbar-toggle:hover, .navbar-inverse .navbar-toggle:focus
-    {
-        background-color: transparent;
-    }
+/* Navbar content 100% width */
 
-    /* Navbar Button End*/
-
-    @media screen and (min-width: 768px)
-    {
-        .navbar-nav 
-        {
-            float: right;
-        }
-    }
-
-    /* Navbar content 100% width */
-
-    @media screen and (min-width: 768px)
-    {
+@media screen and (min-width: 768px)
+{
     .container 
-        {
-            width: 100%;
-        }
-    }
-
-    @media screen and (min-width: 992px) 
     {
-    .container 
-        {
-            width: 100%;
-        }
+        width: 100%;
     }
 
-    @media screen and (min-width: 1200px)
-    { 
-    .container 
-        {
-            width: 100%;
-        }
+    .navbar-brand 
+    {
+        padding: 15px 15px 15px 30px;
     }
+}
+
+@media screen and (min-width: 992px) 
+{
+    .container 
+    {
+        width: 100%;
+    }
+}
+
+@media screen and (min-width: 1200px)
+{ 
+    .container 
+    {
+        width: 100%;
+    }
+}
 
 /*Navbar end*/
 
@@ -145,14 +143,14 @@ a:hover, a:active, a:focus
     justify-content: center; /* align horizontal */
     align-items: center; /* align vertical */
     color: white;
-    
+
     background: 
-    url(../img/background.jpg);;
+        url(../img/background.jpg);;
     background-attachment: scroll;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-    
+
 }
 
 .avatar {
@@ -161,8 +159,8 @@ a:hover, a:active, a:focus
     display: block;
     margin: auto;
     border-radius: 50%;
-    box-shadow: 0px 2px 6px rgba(0,0,0,0.2);
-    
+    box-shadow: 0px 2px 4px rgba(0,0,0,0.2);
+
 }
 
 .intro h1
@@ -180,7 +178,7 @@ a:hover, a:active, a:focus
     text-align: center;
 }
 
- @media screen and (max-width: 768px)
+@media screen and (max-width: 768px)
 {
     .intro p
     {
@@ -224,27 +222,29 @@ a:hover, a:active, a:focus
 }
 
 .button-light, .button-light:focus {
-    color: white;
-    background-color: RGBA(255,255,255,0);
+    transition: 0.5s;
     font-size: 18px;
+    font-weight: bold;
     padding: 5px;
     width: 150px;
     display: block;
     margin: 50px auto 0 auto;
     text-align: center;
-    border-width: 2px;
-    border-style: solid;
-    border-color: white;
     border-radius: 20px;
+    position: absolute;
+    bottom: 10%;
+    left: 0;
+    right: 0;
+    color: #222;
+    background-color: RGBA(255,255,255,1);
+    box-shadow: 0px 3px 10px rgba(0,0,0,0.2);
 }
 
 .button-light:hover {
     color: #222;
-    background-color: white;
-    background-color: RGBA(255,255,255,1);
+    box-shadow: 0px 3px 15px rgba(0,0,0,0.3);
+
 }
-
-
 
 .cover 
 {

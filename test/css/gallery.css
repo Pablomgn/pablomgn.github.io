@@ -1,13 +1,12 @@
 .grid-item
 {
-    transition: .5s ease;
     padding-bottom: 10px;
 }
 
 .grid-item-content 
 {
     width: 100%;
-    box-shadow: 0px 2px 6px rgba(0,0,0,0.1);
+    box-shadow: 0px 3px 5px rgba(0,0,0,0.3);
     border-radius: 3px;
 
 }
@@ -26,37 +25,25 @@
     border-radius: 3px;
     width: calc(100% - 10px);
     height: calc(100% - 10px);
-    transition: .5s ease;
+    transition: .5s ease-in-out;
     background-color: #fff;
     background-color: rgba(255,255,255,0.5);
     opacity: 0;
 }
 
 .grid-item:hover .grid-overlay {
+    transition: 0.3s ease;
     opacity: 1;
+    box-shadow: 0px 3px 50px rgba(0,0,0,0.2);
 }
 
 .grid-item:hover {
-    z-index: 10;
-  -moz-transform: scale(1.05);
-  -webkit-transform: scale(1.05);
-  transform: scale(1.05);
+    transition: 0.3s ease-in-out;
+    -moz-transform: scale(1.05);
+    -webkit-transform: scale(1.05);
+    transform: scale(1.05);
+    z-index: 3;
 }
-
-#fullscreen-overlay {
-    position: fixed; /* Sit on top of the page content */
-    display: none; /* Hidden by default */
-    width: 100%; /* Full width (cover the whole page) */
-    height: 100%; /* Full height (cover the whole page) */
-    top: 0; 
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-color: rgba(0,0,0,0.5); /* Black background with opacity */
-    z-index: 2; /* Specify a stack order in case you're using a different order for other elements */
-    cursor: pointer; /* Add a pointer on hover */   
-}
-
 
 .text {
     position: absolute;
