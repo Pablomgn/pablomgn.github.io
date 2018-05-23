@@ -1,3 +1,8 @@
+var host = "pablomgn.com"
+if (window.location.host == host && window.location.protocol != "https:") {
+  window.location.protocol = "https:"
+}
+
 var $root = $('html, body');
 $('a').click(function() {
     var href = $.attr(this, 'href');
@@ -25,7 +30,7 @@ var $grid = $('.grid').masonry({
 // layout Masonry after each image loads
 $grid.imagesLoaded().progress( function() {
   $grid.masonry();
-}); 
+});
 
 $('.grid').isotope({
   // options
@@ -39,12 +44,12 @@ $('.filter-button-group').on( 'click', 'button', function() {
   $grid.isotope({ filter: filterValue });
 });
 
-$(document).ready(function(){       
+$(document).ready(function(){
    var scroll_start = 0;
    var startchange = $('#startchange');
    var offset = startchange.offset();
     if (startchange.length){
-   $(document).scroll(function() { 
+   $(document).scroll(function() {
       scroll_start = $(this).scrollTop();
       if(scroll_start > offset.top) {
           $(".navbar-inverse").css('background-color', '#f0f0f0');
@@ -60,4 +65,3 @@ $('a').click(function(event){
   // run code
 
 })
-
