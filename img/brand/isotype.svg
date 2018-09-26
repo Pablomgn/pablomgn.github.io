@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg
+  width="100%"
+  height="100%">
+  <symbol id="a"
+  viewBox="0 0 500 500"
+  version="1.1"
+  xmlns="http://www.w3.org/2000/svg"
+  xmlns:xlink="http://www.w3.org/1999/xlink"
+  xml:space="preserve"
+  xmlns:serif="http://www.serif.com/"
+  style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:bevel;stroke-miterlimit:10;"><rect id="Mesa-de-trabajo1" serif:id="Mesa de trabajo1" x="0" y="0" width="499.997" height="500" style="fill:none;"/><path d="M359.888,231.762l109.89,63.444l-219.78,126.889l-219.778,-126.889l109.89,-63.444" style="fill:none;stroke:currentColor;stroke-width:46px;"/><path d="M249.999,168.317l-109.89,-63.443l0,253.777l109.89,63.445l109.889,-63.445l0,-126.89l0,-126.887l-109.889,63.443Z" style="fill:none;stroke:currentColor;stroke-width:46px;"/><path d="M249.999,420.54l0,-252.223" style="fill:none;stroke:currentColor;stroke-width:46px;"/>
+  </symbol>
+
+  <symbol id="back"
+  viewBox="0 0 500 500"
+  version="1.1"
+  xmlns="http://www.w3.org/2000/svg"
+  xmlns:xlink="http://www.w3.org/1999/xlink"
+  xml:space="preserve"
+  xmlns:serif="http://www.serif.com/"
+  style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:bevel;stroke-miterlimit:1.5;"><rect id="Mesa-de-trabajo1" serif:id="Mesa de trabajo1" x="0" y="0" width="499.997" height="500" style="fill:none;"/><path d="M291.991,374.646l-159.874,-111.161l159.874,-111.161" style="fill:none;stroke:currentColor;stroke-width:46px;"/>
+  </symbol></svg>

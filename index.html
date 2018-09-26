@@ -1,151 +1,283 @@
 <!doctype html>
-<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang=""> <![endif]-->
-<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8" lang=""> <![endif]-->
-<!--[if IE 8]>         <html class="no-js lt-ie9" lang=""> <![endif]-->
-<!--[if gt IE 8]><!-->
 <html class="no-js" lang="en">
-<!--<![endif]-->
 
 <head>
   <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-  <title>Pablo Marín</title>
-  <meta name="description" content="">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="apple-touch-icon" href="apple-touch-icon.png">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <title>Pablo Marín - art & design</title>
+  <meta name="description" content="Make your business shine! Professionally designed 3D images, websites and brands.">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-  <link rel="stylesheet" href="css/bootstrap.min.css">
-  <link rel="stylesheet" href="css/icons.css">
-  <link href="https://fonts.googleapis.com/css?family=Montserrat:400,400i,900,900i" rel="stylesheet">
-  <style>
-    body {
-      padding-top: 30px;
+  <link rel="manifest" href="site.webmanifest">
+  <link rel="apple-touch-icon" href="icon.png">
+
+  <link rel="stylesheet" href="css/normalize.css">
+  <link rel="stylesheet" href="css/main.min.css">
+
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-125435154-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag() {
+      dataLayer.push(arguments);
     }
-  </style>
-  <link rel="stylesheet" href="css/bootstrap-theme.css">
-  <link rel="stylesheet" href="css/hamburger.css">
-  <link rel="stylesheet" href="css/main.css">
+    gtag('js', new Date());
 
-  <script src="js/vendor/modernizr-2.8.3-respond-1.4.2.min.js"></script>
+    gtag('config', 'UA-125435154-1');
+  </script>
 
+  <!-- Google Tag Manager -->
+  <script>
+    (function(w, d, s, l, i) {
+      w[l] = w[l] || [];
+      w[l].push({
+        'gtm.start': new Date().getTime(),
+        event: 'gtm.js'
+      });
+      var f = d.getElementsByTagName(s)[0],
+        j = d.createElement(s),
+        dl = l != 'dataLayer' ? '&l=' + l : '';
+      j.async = true;
+      j.src =
+        'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
+      f.parentNode.insertBefore(j, f);
+    })(window, document, 'script', 'dataLayer', 'GTM-KNZKB9P');
+  </script>
+  <!-- End Google Tag Manager -->
 </head>
 
-<body>
-  <!--[if lt IE 8]>
-            <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
-        <![endif]-->
-  <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
-    <div class="container">
-      <div class="navbar-header">
-        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-            <span class="sr-only">Toggle navigation</span>
-            <span></span>
-          </button>
-          <div class="">
-            <div class="">
-            </div>
-          </div>
-        <a class="navbar-brand" id="brand" href="#">
-          pablomgn</a>
-        <script src="js/typewriter/typewriter.min.js"></script>
-        <script>
-          var app = document.getElementById('brand');
+<body onload="init()">
 
-          var typewriter = new Typewriter(app, {});
+  <!--CSS Spinner-->
+  <div class="spinner-wrapper" id="preloader">
+    <div class="spinner"></div>
+  </div>
 
-          typewriter.typeString('Art and Design')
-            .pauseFor(1000)
-            .deleteChars(14)
-            .pauseFor(500)
-            .typeString('Pablo Marín')
-            .start();
-        </script>
-      </div>
-      <div id="navbar" class="navbar-collapse collapse">
-        <ul class="nav navbar-nav">
-          <li>
-            <a href="#">Información</a>
-          </li>
-          <li>
-            <a href="#">Portfolio</a>
-          </li>
-          <li>
-            <a href="#">Contacto</a>
-          </li>
-          <li>
-            <a href="#">ES</a>
-          </li>
-        </ul>
-      </div>
-      <!--/.navbar-collapse -->
-    </div>
-  </nav>
+  <!-- Google Tag Manager (noscript) -->
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KNZKB9P"
+  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+  <!-- End Google Tag Manager (noscript) -->
 
   <!-- Content -->
-  <div class="cover">
-    <div>
-      <h1><b>EN CONSTRUCCIÓN</b></h1>
-      <h3>Por favor, vuelve mas tarde</h3>
+  <div id="barba-wrapper">
+  <div class="barba-container">
+  <div class="top-menu noselect">
+    <a href="#hero-section" class="imagotype block-hover">
+      <svg class="isotype"><use xlink:href="img/brand/isotype.svg#a"/></svg>
+      <!-- <img src="img/brand/isotype.svg" class="isotype" alt=""> -->
+       Pablo Marín
+    </a>
+
+    <div class="burger-wrapper">
+      <div class="burger">
+
+        <div class="open-burger">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+
+        <div class="closed-burger">
+          <span></span>
+          <span></span>
+        </div>
+      </div>
+    </div>
+
+    <nav class="main-nav">
+      <ul>
+        <li><a class="block-hover" href="#services">Services</a></li>
+        <li><a class="block-hover" href="#works">Works</a></li>
+        <li><a class="block-hover" href="#contact">Contact</a></li>
+        <li><a class="block-hover" href="about.html">About</a></li>
+        <li><a class="block-hover" href="">ES</a></li>
+      </ul>
+    </nav>
+  </div>
+
+  <div class="menu-background"></div>
+
+  <header>
+    <div class="hero-section" id="hero-section">
+      <div class="bcg"></div>
+      <div class="hero-wrapper">
+        <h1>Hi! I'm a digital designer based in Spain</h1>
+      </div>
+    </div>
+  </header>
+  <main>
+    <div id="services" class="anchor"></div>
+    <div class="main-wrapper">
+      <section class="project-card" id="services-section">
+        <header>
+          <h1>Services</h1>
+          </header>
+          <div class="small-card"><h3>Web Design & Developement</h3><p>Responsive web design, SEO Optimized and WordPress compatible.</p></div>
+          <div class="small-card"><h3>Digital & Graphic Design</h3><p>Specialized digital design for any sort of applications, also available on print.</p></div>
+          <div class="small-card"><h3>Visualization & Illustration</h3><p>From realistic representations of packaging and products to stylized and creative drawings.</p></div>
+      </section>
+      <div id="works" class="anchor"></div>
+      <section>
+        <div id="project1" class="project-anchor"></div>
+        <header class="project-card" style="margin-top:0; margin-bottom: 0;"><h1>My work</h1></header>
+        <section class="project-card" style="margin-top:75px;">
+          <div class="image-container block-reveal">
+            <img src="img/prevs/music-festival-illustration.jpg" alt="">
+          </div>
+
+            <div class="text-wrapper">
+              <header><h2>Green Galaxy Festival</h2>
+              </header>
+              <p>Visual identity for a music festival.</p>
+              <a href="/projects/green-galaxy.html" class="block-hover class="html5lightbox" data-width="960" data-height="600"">See more</a>
+            </div>
+        </section>
+
+        <div id="project2" class="project-anchor"></div>
+        <section class="project-card">
+          <div class="image-container alternate block-reveal">
+            <img src="img/prevs/teller-cameras.jpg" alt="">
+          </div>
+
+            <div class="text-wrapper">
+              <header><h2>Teller Cameras</h2>
+              </header>
+              <p>Branding, packaging design and visualization.</p>
+              <a href="/projects/teller-cameras.html" class="block-hover">See more</a>
+            </div>
+        </section>
+
+        <div id="project3" class="project-anchor"></div>
+        <section class="project-card">
+          <div class="image-container block-reveal">
+            <img src="img/prevs/cartoon-guy.jpg" alt="">
+          </div>
+
+            <div class="text-wrapper">
+              <header><h2>Ian</h2>
+              </header>
+              <p>Sculpt made as a personal project.</p>
+              <a href="/projects/cartoon-character.html" class="block-hover">See more</a>
+            </div>
+        </section>
+      </section>
+    </div>
+  </main>
+
+  <div id="contact" class="anchor"></div>
+  <footer style="">
+    <div class="color-panel">
+      <div class="main-wrapper project-card">
+        <h1>Get in touch</h1>
+        <p>If you'd like to work with me or have any questions feel free to send an email!</p>
+        <address>
+            <a href="mailto:hello@pablomarin.es" class="block-hover negative"><svg class="icon"><use xlink:href="../img/icons.svg#mail"/></svg> hello@pablomarin.es</a>
+            <div><a href="https://behance.net/pablomgn" class="block-hover negative" target="_blank"><svg class="icon"><use xlink:href="../img/social-icons.svg#behance"/></svg></a>
+            <a href="https://instagram.com/pablomgn" class="block-hover negative" target="_blank"><svg class="icon"><use xlink:href="../img/social-icons.svg#instagram"/></svg></a>
+            <a href="https://twitter.com/pablomgn" class="block-hover negative" target="_blank"><svg class="icon"><use xlink:href="../img/social-icons.svg#twitter"/></svg></a></div>
+          </address>
+        <br>
+      </div>
+
+
+      <div class="legal-wrapper">
+        <div class="main-wrapper project-card ">
+          <a href="/admin/legal-notice.html" class="block-hover negative">Legal Notice</a>
+          <p>&copy;
+            <script>
+              now = new Date
+              start = 2018
+              theYear = now.getYear()
+              if (theYear < 1900) {
+                theYear = theYear + 1900
+                if (theYear > start) {
+                  document.write(start + " - " + theYear)
+                } else {
+                  document.write(start)
+                }
+              }
+            </script>
+            PABLO MARÍN</p>
+        </div>
+      </div>
+      </div>
+  </footer>
+</div>
+</div>
+
+  <div class="cookie-warning hidden">
+    <div class="cookie-wrapper">
+      <div class="consent-text">
+        <p> This web uses cookies to check traffic.
+          <a href="404.html" target="_blank" style="color: white; font-weight: bold;">More info here.</a>
+        </p>
+      </div>
+      <div class="consent-button block-hover negative">
+        <p>Dismiss</p>
+      </div>
     </div>
   </div>
 
-  <footer class="main-footer">
-    <address>
-      <a href="&#x6d;&#97;&#105;&#x6c;&#116;&#x6f;&#58;&#x6d;&#x65;&#x64;&#x69;&#x61;&#x40;&#112;&#x61;&#x62;&#108;&#x6f;&#x6d;&#103;&#110;&#46;&#99;&#x6f;&#x6d;" target="_top">
-          <svg class="color-svg">
-              <use xlink:href="img/sprite.svg#mail"></use>
-          </svg>
-          &#x6d;&#x65;&#x64;&#x69;&#x61;&#x40;&#112;&#x61;&#x62;&#108;&#x6f;&#x6d;&#103;&#110;&#46;&#99;&#x6f;&#x6d;
-      </a>
-      <br>
-      <br>
-      <p>&copy 2018
-        <script>
-          now = new Date
-          theYear = now.getYear()
-          if (theYear < 1900) {
-            theYear = theYear + 1900
-            if (theYear > 2018) {
-              document.write(" - " + theYear)
-            }
-          }
-        </script> PABLO MARÍN</p>
-    </div>
-    </address>
-  </footer>
-
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
-
+  <script src="js/vendor/modernizr-3.6.0.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
   <script>
-    window.jQuery || document.write('<script src="js/vendor/jquery-1.11.2.min.js"><\/script>')
+    window.jQuery || document.write('<script src="js/vendor/jquery-3.3.1.min.js"><\/script>')
   </script>
-
-  <script src="js/vendor/bootstrap.min.js"></script>
-
-  <script src="js/hamburger.js"></script>
-
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.0.1/TweenMax.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.5/ScrollMagic.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.5/plugins/animation.gsap.min.js"></script>
+  <!-- <script src="//cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.5/plugins/debug.addIndicators.min.js"></script> -->
+  <script src="js/jquery.cookie-1.4.1.min.js"></script>
+  <script src="js/jquery.easing.1.3.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/barba.js/1.0.0/barba.min.js" type="text/javascript"></script>
   <script src="js/main.js"></script>
+  <script src="js/customCookies.js"></script>
+  <script src="js/svgxuse.min.js"></script>
 
-
-  <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
-  <!-- 
+  <!-- Google Analytics: change UA-XXXXX-Y to be your site's ID. -->
   <script>
-    (function(b, o, i, l, e, r) {
-      b.GoogleAnalyticsObject = l;
-      b[l] || (b[l] =
-        function() {
-          (b[l].q = b[l].q || []).push(arguments)
-        });
-      b[l].l = +new Date;
-      e = o.createElement(i);
-      r = o.getElementsByTagName(i)[0];
-      e.src = 'https://www.google-analytics.com/analytics.js';
-      r.parentNode.insertBefore(e, r)
-    }(window, document, 'script', 'ga'));
-    ga('create', 'UA-XXXXX-X', 'auto');
-    ga('send', 'pageview');
+    window.ga = function() {
+      ga.q.push(arguments)
+    };
+    ga.q = [];
+    ga.l = +new Date;
+    ga('create', 'UA-125435154-1', 'auto');
+    ga('send', 'pageview')
+    function PageScrollFix(x) {
+
+    // BARBA SCROLL FIX
+    setTimeout(function () {
+      $('html, body').animate({
+            scrollTop: $('#'+x).offset().top
+        }, 1000);
+    }, 500);
+
+  }
   </script>
- -->
+  <script src="https://www.google-analytics.com/analytics.js" async defer></script>
+  <script>
+
+  var preloader = document.getElementById('preloader');
+
+    window.onload = function() {
+      TweenMax.to($(preloader), 1, { left: "100%", ease: Expo.easeOut, onComplete: function() { $(preloader).remove();} });
+      TweenMax.to($(preloader), 1, { left: "100%", ease: Expo.easeOut, onComplete: function() { $(preloader).remove();} });
+    }
+
+  //   window.onload = function() {
+  //   if (sessionStorage.getItem('dontLoad') == null)
+  //     {
+  //       TweenMax.to($(preloader), 1, { left: "100%", ease: Expo.easeOut, onComplete: function() { $(preloader).remove();} });
+  //       TweenMax.to($(preloader), 1, { left: "100%", ease: Expo.easeOut, onComplete: function() { $(preloader).remove();} });
+  //       sessionStorage.setItem('dontLoad', 'true');
+  //     } else {
+  //       document.getElementById('preloader').remove();
+  //     }
+  // };
+
+  </script>
 </body>
 
 </html>
