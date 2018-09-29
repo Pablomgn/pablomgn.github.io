@@ -393,19 +393,19 @@ Barba.Pjax.getTransition = function() {
   });
 
 
-  //Language Redirect
-
-  var language = navigator.language || navigator.browserLanguage; //for IE
-
-  // alert(language);
-
-  if (language.indexOf('es' || 'ca' || 'gl') > -1) {
-  //document.location.href = 'https://pablomarin.es';
-  } else {
-  var str = window.location.href;
-  var result= str.substring(0,26) + "en/" + str.substring(26);
-  document.write(result);
-  }
+  // //Language Redirect
+  //
+  // var language = navigator.language || navigator.browserLanguage; //for IE
+  //
+  // // alert(language);
+  //
+  // if (language.indexOf('es' || 'ca' || 'gl') > -1 && window.location.href == "https://pablomarin.es") {
+  // //document.location.href = 'https://pablomarin.es';
+  // } else {
+  // var str = window.location.href;
+  // var result= str.substring(0,26) + "en/" + str.substring(26);
+  // window.location.href = result;
+  // }
 
   //***********
   // JQuery End
