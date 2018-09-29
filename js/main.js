@@ -403,7 +403,7 @@ Barba.Pjax.getTransition = function() {
   //document.location.href = 'https://pablomarin.es';
   } else {
   var str = window.location.href;
-  var result= str.substring(0,26) + "/en" + str.substring(26);
+  var result= str.substring(0,26) + "en/" + str.substring(26);
   document.write(result);
   }
 
