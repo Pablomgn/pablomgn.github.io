@@ -333,7 +333,16 @@ Barba.Pjax.getTransition = function() {
 
   // ----------------------Snippets------------------
 
+  function PageScrollFix(x) {
 
+  // BARBA SCROLL FIX
+  setTimeout(function () {
+    $('html, body').animate({
+          scrollTop: $('#'+x).offset().top
+      }, 1000);
+  }, 500);
+
+  }
 
   // *************************
   // Delay external page load
@@ -382,6 +391,21 @@ Barba.Pjax.getTransition = function() {
   $( ".burger-wrapper" ).click(function() {
     menuIn ();
   });
+
+
+  //Language Redirect
+
+  var language = navigator.language || navigator.browserLanguage; //for IE
+
+  // alert(language);
+
+  if (language.indexOf('es' || 'ca' || 'gl') > -1) {
+  //document.location.href = 'https://pablomarin.es';
+  } else {
+  var str = window.location.href;
+  var result= str.substring(0,26) + "/en" + str.substring(26);
+  document.write(result);
+  }
 
   //***********
   // JQuery End
