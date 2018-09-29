@@ -28,30 +28,30 @@ $bp-xxlarge: 160em; // 2560px
 }
 
 // -------- Selection color
+a,
 h1,
 h2,
 h3,
-p,
-a {
+p {
   &::selection {
     background: $selection-color;
     color: white;
   }
 }
 
+a,
 h1,
 h2,
-h3,
-a {
+h3 {
   font-family: $accent-font;
 }
 
-.color-panel, .small-card {
+.color-panel,
+.small-card {
   h1,
   h2,
   h3,
-  p,
-   {
+  p {
     &::selection {
       background: rgba(255,255,255,0.95);
       color: $selection-color;
@@ -89,7 +89,8 @@ h3 {
   }
 }
 
-.color-panel, .small-card {
+.color-panel,
+.small-card {
   h1,
   h2,
   h3 {
@@ -107,7 +108,9 @@ h3:after {
   height: 5px;
 }
 
-
+p {
+  opacity: 0.8;
+}
 // -------- General Setup
 
 body {
@@ -153,21 +156,18 @@ body {
   // *****************
   // Page transition
   // *****************
-
   .page-transition {
-
     position: fixed;
     z-index: 999;
     content: '';
     top: 0;
     left: 0;
     height: 100%;
-    width: 0%;
+    width: 0;
     background: white;
   }
 
   .page-transition.white-bg {
-
     background: white;
     z-index: 900;
   }
@@ -194,10 +194,10 @@ body {
     min-width: $bp-xxxsmall;
     background-color: $debug-color;
     z-index: 100;
+
     a {
       //color: $main-color;
     }
-
 
     .imagotype {
       position: absolute;
@@ -296,8 +296,6 @@ body {
         }
       }
     }
-
-
     @media only screen and (min-width: $bp-medium) {
       nav {
         position: absolute;
@@ -351,8 +349,6 @@ body {
     }
   }
   //Block Reveal Link
-
-
   .block-hover {
     color: $main-color;
     position: relative;
@@ -366,7 +362,7 @@ body {
       content: '';
       position: absolute;
       z-index: -1;
-      width: 0%;
+      width: 0;
       left: 0;
       bottom: 0;
       background-color: $main-color;
@@ -388,28 +384,29 @@ body {
   }
 
   .imagotype.block-hover {
-      &::after {
-        height: 60%;
-        bottom: 0px;
-      }
+    &::after {
+      height: 60%;
+      bottom: 0;
+    }
   }
-
   // Set hover effect as default when on mobile
   @media only screen and (max-width: $bp-small) {
-    main, footer, .cookie-warning{
-    .block-hover {
-      color: white;
-      margin-left: 0;
-
-      &::after {
-        content: '';
-        width: 100%;
-      }
-
-      .icon {
+    .cookie-warning,
+    footer,
+    main {
+      .block-hover {
         color: white;
+        margin-left: 0;
+
+        &::after {
+          content: '';
+          width: 100%;
+        }
+
+        .icon {
+          color: white;
+        }
       }
-    }
     }
   }
 
@@ -446,7 +443,6 @@ body {
     height: $default-font-size*0.8;
     color: black;
     fill: none;
-
     position: relative;
     top: 3px;
   }
@@ -461,38 +457,33 @@ body {
 
     h1 {
       margin: 0;
-      @media only screen and (max-width: $bp-small)
-      {
+      @media only screen and (max-width: $bp-small) {
         font-size: 2.1em;
-        &:after{
+
+        &:after {
           height: 6px;
         }
       }
     }
 
     .bcg {
-
       //background: $main-color;
-      @media only screen and (max-width: $bp-small)
-      {
+      @media only screen and (max-width: $bp-small) {
         background: url("../img/hero-image-r01.jpg") no-repeat;
         background-size: cover;
         background-position: center top;
       }
-      @media only screen and (min-width: $bp-small)
-      {
+      @media only screen and (min-width: $bp-small) {
         background: url("../img/hero-image.jpg") no-repeat;
         background-size: cover;
         background-position: center;
       }
       position: absolute;
-
       width: 100%;
       height: 100%;
       top: 0;
       z-index: 0;
       opacity: 1;
-
     }
 
     .hero-wrapper {
@@ -507,7 +498,6 @@ body {
       // @media only screen and (min-width: $bp-large) {
       //   left: 40%;
       // }
-
       @media only screen and (max-width: $bp-small) {
         top: 30%;
         padding: 150px 25px;
@@ -527,6 +517,7 @@ body {
   }
 
   .small-card {
+    position: relative;
     background-color: $main-color;
     color: white;
     display: inline-block;
@@ -535,35 +526,51 @@ body {
     word-break: keep-all;
     padding: 30px;
     width: 30%;
-    margin: 20px 0 50px 0;
-    @media only screen and (max-width: $bp-medium) {
-      h3
-      {
+    margin: 20px 0 50px;
+    overflow: hidden;
+
+    h3 {
+      margin-top: 5px;
+      @media only screen and (max-width: $bp-medium) {
         font-size: $default-font-size*0.8;
       }
-
     }
     @media only screen and (min-width: $bp-small) {
-    &:nth-of-type(even){
-      margin-left: 3%;
-      margin-right: 3%;
+      &:nth-of-type(even) {
+        margin-left: 3%;
+        margin-right: 3%;
+      }
+      min-height: 380px;
     }
-
-
-  }
     @media only screen and (max-width: $bp-small) {
       width: 100%;
-      margin: 20px 0 20px 0;
-      h3
-      {
+      margin: 20px 0;
+
+      h3 {
         font-size: $default-font-size;
       }
     }
 
-    min-height: 350px;
-
     p {
       font-size: $default-font-size*0.6;
+    }
+
+    .big-icon {
+      width: 100px;
+      height: 100px;
+      margin-left: -5px;
+    }
+
+    .draw-animation {
+      stroke-dasharray: 700;
+      stroke-dashoffset: 700;
+      animation: dash 5s linear forwards;
+    }
+
+    @keyframes dash {
+      to {
+        stroke-dashoffset: 0;
+      }
     }
   }
 
@@ -573,7 +580,7 @@ body {
     margin: 200px auto;
     @media only screen and (max-width : $bp-small) {
       margin: 100px auto;
-          padding-bottom: 10px;
+      padding-bottom: 10px;
     }
 
     .image-container {
@@ -619,41 +626,42 @@ body {
   .project {
     max-width: 1100px;
     overflow: hidden;
-
-    margin: 110px auto 200px auto;
+    margin: 110px auto 200px;
     @media only screen and (max-width : $bp-small) {
       margin: 100px auto;
-          padding-bottom: 10px;
-        }
-        .project-header {
-          position: relative;
-          display: inline-block;
-          overflow: hidden;
-          width: 100%;
-          @media only screen and (min-width : $bp-medium) {
-            //max-height: 300px;
-          }
-        }
-        img {
-          width:100%;
-        }
-
-        .content-wrapper{
-          img {
-            padding: 50px 0 50px 0;
-          }
-        }
-      }
-
-  main{
-  .text-wrapper {
-    display: inline-block;
-    vertical-align: top;
-    @media only screen and (max-width : $bp-small) {
-      max-width: 100%;
+      padding-bottom: 10px;
     }
-    max-width: 39%;
+
+    .project-header {
+      position: relative;
+      display: inline-block;
+      overflow: hidden;
+      width: 100%;
+      @media only screen and (min-width : $bp-medium) {
+        //max-height: 300px;
+      }
+    }
+
+    img {
+      width: 100%;
+    }
+
+    .content-wrapper {
+      img {
+        padding: 50px 0;
+      }
+    }
   }
+
+  main {
+    .text-wrapper {
+      display: inline-block;
+      vertical-align: top;
+      @media only screen and (max-width : $bp-small) {
+        max-width: 100%;
+      }
+      max-width: 39%;
+    }
   }
 }
 
@@ -670,7 +678,7 @@ body {
 .color-panel {
   background-color: $main-color;
   color: white;
-  padding: 100px 0 0 0;
+  padding: 100px 0 0;
   margin: auto;
 
   .main-wrapper {
@@ -678,9 +686,10 @@ body {
   }
 }
 
-.legal-wrapper{
+.legal-wrapper {
   text-align: right;
   padding-bottom: 25px;
+
   p {
     max-width: 1400px;
   }
@@ -694,8 +703,6 @@ body {
     }
   }
 }
-
-
 //************************
 // Cookie Warning
 //************************
@@ -715,13 +722,13 @@ body {
   }
 
   p {
-    margin: 0px;
+    margin: 0;
   }
 
   .cookie-wrapper {
     max-width: 900px;
     margin: auto;
-    padding: 20px 50px 0px 50px;
+    padding: 20px 50px 0;
     @media only screen and (min-width: $bp-large) {
       max-width: 1100px;
     }
@@ -735,17 +742,16 @@ body {
 
     .consent-button {
       display: inline-block;
-      float:right;
+      float: right;
       cursor: pointer;
-      margin: auto;
-      margin-bottom: 20px;
+      margin: auto auto 20px;
     }
   }
 }
-
 //************************
 // Spinner
 //************************
+
 .spinner-wrapper {
   position: fixed;
   top: 0;
@@ -764,37 +770,45 @@ body {
     // background-size: contain;
     // background-image: url("../img/brand/imagotype.png");
     // background-image: url("../img/brand/imagotype.svg");
-
     position: absolute;
     top: 45%;
     left: 45%;
-    @media only screen and (max-width: $bp-small){
+    @media only screen and (max-width: $bp-small) {
       left: 39%;
     }
     -webkit-animation: sk-rotateplane 1.2s infinite ease-in-out;
     animation: sk-rotateplane 1.2s infinite ease-in-out;
   }
 }
-
 @-webkit-keyframes sk-rotateplane {
-  0% { -webkit-transform: perspective(120px) }
-  50% { -webkit-transform: perspective(120px) rotateY(180deg) }
-  100% { -webkit-transform: perspective(120px) rotateY(180deg)  rotateX(180deg) }
-}
+  0% {
+    -webkit-transform: perspective(120px);
+  }
 
+  50% {
+    -webkit-transform: perspective(120px) rotateY(180deg);
+  }
+
+  100% {
+    -webkit-transform: perspective(120px) rotateY(180deg) rotateX(180deg);
+  }
+}
 @keyframes sk-rotateplane {
   0% {
     transform: perspective(120px) rotateX(0deg) rotateY(0deg);
-    -webkit-transform: perspective(120px) rotateX(0deg) rotateY(0deg)
-  } 50% {
+    -webkit-transform: perspective(120px) rotateX(0deg) rotateY(0deg);
+  }
+
+  50% {
     transform: perspective(120px) rotateX(-180.1deg) rotateY(0deg);
-    -webkit-transform: perspective(120px) rotateX(-180.1deg) rotateY(0deg)
-  } 100% {
+    -webkit-transform: perspective(120px) rotateX(-180.1deg) rotateY(0deg);
+  }
+
+  100% {
     transform: perspective(120px) rotateX(-180deg) rotateY(-179.9deg);
     -webkit-transform: perspective(120px) rotateX(-180deg) rotateY(-179.9deg);
   }
 }
-
 //************************
 // Fixes
 //************************
@@ -809,13 +823,15 @@ html {
 
 a {
   text-decoration: none;
+
   &::after {
-    content:'';
+    content: '';
   }
 }
 
 address {
   font-style: normal;
+
   a.block-hover {
     display: inline-block;
     margin-right: 20px;
@@ -823,7 +839,6 @@ address {
     margin-bottom: 20px;
   }
 }
-
 //************************
 // Snippets
 //************************
@@ -862,7 +877,7 @@ address {
   visibility: hidden;
 }
 
-.project-anchor{
+.project-anchor {
   display: block;
   position: relative;
   top: -150px;
@@ -871,8 +886,7 @@ address {
 
 .anchor#contact {
   top: -25px;
-  @media only screen and (max-width: $bp-small)
-  {
-  top: -75px;
+  @media only screen and (max-width: $bp-small) {
+    top: -75px;
   }
 }

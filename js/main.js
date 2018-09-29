@@ -15,7 +15,7 @@ if (document.documentElement.lang === "es") {
 
 
 if (IE10orBelow() < 9) {
-  document.body.innerHTML = "<html> <body> <div class='container'> <img src='img/warning.gif'> <div class='content' id='content'><b>"+ IeWarningHeader + IE10orBelow() + "</b><br/><br/>" + IeWarningText + "</br></br><a style='text-align: center;'href='https://browsehappy.com/'><b>"+"+ " + IeWarningLink + "</b></a></div> <style> html, body { margin: 0; padding: 0; width: 100%; height: 100%; display: table; background: black; } .container { position: absolute; top: 50px; left: 50%; width: 500px; margin-left: -250px; /* half the box width */ } .content { background-color: white; color: black; display: inline-block; text-align: left; font-family: Segoe UI,Frutiger,Frutiger Linotype,Dejavu Sans,Helvetica Neue,Arial,sans-serif; padding: 10px; } </style> </body> </html>";
+  document.body.innerHTML = "<html> <body> <div class='container'> <img src='img/warning.gif'> <div class='content' id='content'><b>" + IeWarningHeader + IE10orBelow() + "</b><br/><br/>" + IeWarningText + "</br></br><a style='text-align: center;'href='https://browsehappy.com/'><b>" + "+ " + IeWarningLink + "</b></a></div> <style> html, body { margin: 0; padding: 0; width: 100%; height: 100%; display: table; background: black; } .container { position: absolute; top: 50px; left: 50%; width: 500px; margin-left: -250px; /* half the box width */ } .content { background-color: white; color: black; display: inline-block; text-align: left; font-family: Segoe UI,Frutiger,Frutiger Linotype,Dejavu Sans,Helvetica Neue,Arial,sans-serif; padding: 10px; } </style> </body> </html>";
 }
 
 function IE10orBelow() {
@@ -38,86 +38,99 @@ $(document).ready(function() {
   animateOnLoad();
 
   var FadeTransition = Barba.BaseTransition.extend({
-  start: function() {
-    /**
-     * This function is automatically called as soon the Transition starts
-     * this.newContainerLoading is a Promise for the loading of the new container
-     * (Barba.js also comes with an handy Promise polyfill!)
-     */
+    start: function() {
+      /**
+       * This function is automatically called as soon the Transition starts
+       * this.newContainerLoading is a Promise for the loading of the new container
+       * (Barba.js also comes with an handy Promise polyfill!)
+       */
 
-    // As soon the loading is finished and the old page is faded out, let's fade the new page
-    Promise
-      .all([this.newContainerLoading, this.fadeOut()])
-      .then(this.fadeIn.bind(this));
-  },
+      // As soon the loading is finished and the old page is faded out, let's fade the new page
+      Promise
+        .all([this.newContainerLoading, this.fadeOut()])
+        .then(this.fadeIn.bind(this));
+    },
 
-  fadeOut: function() {
-    /**
-     * this.oldContainer is the HTMLElement of the old Container
-     */
+    fadeOut: function() {
+      /**
+       * this.oldContainer is the HTMLElement of the old Container
+       */
 
-     $("body").append("<div class='page-transition'></div>");
+      $("body").append("<div class='page-transition'></div>");
 
-     var tlBlockpage = new TimelineMax();
-     var pageTransitionBlock = $(".page-transition");
+      var tlBlockpage = new TimelineMax();
+      var pageTransitionBlock = $(".page-transition");
 
-     tlBlockpage
+      tlBlockpage
 
-     .to(pageTransitionBlock, 0.5, { width: '100%', ease: Expo.easeOut })
-     .to(this.oldContainer, 0.2, { opacity: 0, ease: Expo.easeOut }, "-=0.1")
-     .to(pageTransitionBlock, 0.5, { left: '100%', ease: Expo.easeOut }, "-=0.1");
+        .to(pageTransitionBlock, 0.5, {
+          width: '100%',
+          ease: Expo.easeOut
+        })
+        .to(this.oldContainer, 0.2, {
+          opacity: 0,
+          ease: Expo.easeOut
+        }, "-=0.1")
+        .to(pageTransitionBlock, 0.5, {
+          left: '100%',
+          ease: Expo.easeOut
+        }, "-=0.1");
 
-      return $(this.oldContainer).animate({ opacity: 0 }).promise();
+      return $(this.oldContainer).animate({
+        opacity: 0
+      }).promise();
 
 
-  },
+    },
 
-  fadeIn: function() {
-    /**
-     * this.newContainer is the HTMLElement of the new Container
-     * At this stage newContainer is on the DOM (inside our #barba-container and with visibility: hidden)
-     * Please note, newContainer is available just after newContainerLoading is resolved!
-     */
+    fadeIn: function() {
+      /**
+       * this.newContainer is the HTMLElement of the new Container
+       * At this stage newContainer is on the DOM (inside our #barba-container and with visibility: hidden)
+       * Please note, newContainer is available just after newContainerLoading is resolved!
+       */
 
-    // $(window).scrollTop(0);
-    //
-    // if ('scrollRestoration' in history) {
-    //   history.scrollRestoration = 'manual';
-    // }
+      // $(window).scrollTop(0);
+      //
+      // if ('scrollRestoration' in history) {
+      //   history.scrollRestoration = 'manual';
+      // }
 
-    var _this = this;
-    var $el = $(this.newContainer);
+      var _this = this;
+      var $el = $(this.newContainer);
 
-    $(this.oldContainer).hide();
+      $(this.oldContainer).hide();
 
-    $el.css({
-      visibility : 'visible',
-      opacity : 1
-    });
+      $el.css({
+        visibility: 'visible',
+        opacity: 1
+      });
 
-    $("html, body").animate({ scrollTop: 0 }, "fast");
+      $("html, body").animate({
+        scrollTop: 0
+      }, "fast");
 
-    animateOnLoad();
+      animateOnLoad();
 
-    setTimeout(function() {
-       _this.done();
-    }, 500);
+      setTimeout(function() {
+        _this.done();
+      }, 500);
 
-  }
-});
+    }
+  });
 
-/**
- * Next step, you have to tell Barba to use the new Transition
- */
-
-Barba.Pjax.getTransition = function() {
   /**
-   * Here you can use your own logic!
-   * For example you can use different Transition based on the current page or link...
+   * Next step, you have to tell Barba to use the new Transition
    */
 
-  return FadeTransition;
-};
+  Barba.Pjax.getTransition = function() {
+    /**
+     * Here you can use your own logic!
+     * For example you can use different Transition based on the current page or link...
+     */
+
+    return FadeTransition;
+  };
 
   function animateOnLoad() {
     var isMenu = false;
@@ -126,83 +139,120 @@ Barba.Pjax.getTransition = function() {
     // MENU MOBILE
     // ***********
 
-      var tlMainMenu = new TimelineMax();
+    var tlMainMenu = new TimelineMax();
 
-      $( ".burger-wrapper" ).click(function() {
-        menuIn ();
-      });
+    $(".burger-wrapper").click(function() {
+      menuIn();
+    });
 
-      var menuLinks = $('li', '.main-nav');
-        menuLinks.click(function() {
-          menuIn ();
-      });
+    var menuLinks = $('li', '.main-nav');
+    menuLinks.click(function() {
+      menuIn();
+    });
 
-      tlMainMenu
-        .staggerTo($("span", ".open-burger"), 0.005, { width: "0%", ease: Power4.easeInOut }, 0.08, 0)
-        .to($(".main-nav"), 0.8, { height: "100vh", ease: Power4.easeInOut }, 0)
-        .staggerFrom($("span", ".closed-burger"), 0.005, { width: "0%", ease: Power4.easeInOut }, 0.08, "-=0.35");
+    tlMainMenu
+      .staggerTo($("span", ".open-burger"), 0.005, {
+        width: "0%",
+        ease: Power4.easeInOut
+      }, 0.08, 0)
+      .to($(".main-nav"), 0.8, {
+        height: "100vh",
+        ease: Power4.easeInOut
+      }, 0)
+      .staggerFrom($("span", ".closed-burger"), 0.005, {
+        width: "0%",
+        ease: Power4.easeInOut
+      }, 0.08, "-=0.35");
 
-        tlMainMenu.stop();
+    tlMainMenu.stop();
 
 
-      function menuIn (){
-        if (isMenu==false){
-          // menuEasing = Expo.easeout;
-          tlMainMenu.play();
-          isMenu = true;
-        } else {
-          // menuEasing = Expo.easein;
-          tlMainMenu.reverse();
-          isMenu = false;
-        }
+    function menuIn() {
+      if (isMenu == false) {
+        // menuEasing = Expo.easeout;
+        tlMainMenu.play();
+        isMenu = true;
+      } else {
+        // menuEasing = Expo.easein;
+        tlMainMenu.reverse();
+        isMenu = false;
       }
+    }
 
-  // ******************
-  // Rest of Animations
-  // ******************
-
-
-  var controller = new ScrollMagic.Controller();
-
-  // Hero Image Appears
-
-  var heroImageReveal = new TimelineMax();
-  var menuBackground = $(".menu-background");
-  var topMenu = $(".top-menu");
-
-  var innerImage = $(".bcg", ".hero-section");
-  var innerText = $(".hero-wrapper", ".hero-section");
-  var cookieWarning = $(".cookie-warning");
+    // ******************
+    // Rest of Animations
+    // ******************
 
 
-  heroImageReveal
-                .from(innerImage, 0.7, {width: "0%", ease: Expo.easeout})
-                .to(innerText, 0, { opacity: 0, ease: Expo.easeOut }, 0)
-                .fromTo (menuBackground, 1, { top: "-100%"}, { top: "0%", ease: Expo.easeOut },0.25 )
-                .fromTo (topMenu, 1, { top: "-100%"}, { top: "0%", ease: Expo.easeOut }, 0.25)
-                .add('text',"-=0.2")
-                .from(innerText, 1, { y: "-5%", ease: Expo.easeOut, onComplete: function() { allowSlideTextOpacity();}},"text")
-                .to(innerText, 1, { opacity: 0.99, ease: Expo.easeOut },"text")
-                .to(cookieWarning, 1, { opacity: 1, ease: Expo.easeOut,  });
+    var controller = new ScrollMagic.Controller();
+
+    // Hero Image Appears
+
+    var heroImageReveal = new TimelineMax();
+    var menuBackground = $(".menu-background");
+    var topMenu = $(".top-menu");
+
+    var innerImage = $(".bcg", ".hero-section");
+    var innerText = $(".hero-wrapper", ".hero-section");
+    var cookieWarning = $(".cookie-warning");
 
 
-  //*************************
-  // Home page animations
-  //*************************
+    heroImageReveal
+      .from(innerImage, 0.7, {
+        width: "0%",
+        ease: Expo.easeout
+      })
+      .to(innerText, 0, {
+        opacity: 0,
+        ease: Expo.easeOut
+      }, 0)
+      .fromTo(menuBackground, 1, {
+        top: "-100%"
+      }, {
+        top: "0%",
+        ease: Expo.easeOut
+      }, 0.25)
+      .fromTo(topMenu, 1, {
+        top: "-100%"
+      }, {
+        top: "0%",
+        ease: Expo.easeOut
+      }, 0.25)
+      .add('text', "-=0.2")
+      .from(innerText, 1, {
+        y: "-5%",
+        ease: Expo.easeOut,
+        onComplete: function() {
+          allowSlideTextOpacity();
+        }
+      }, "text")
+      .to(innerText, 1, {
+        opacity: 0.99,
+        ease: Expo.easeOut
+      }, "text")
+      .to(cookieWarning, 1, {
+        opacity: 1,
+        ease: Expo.easeOut,
+      });
 
-  //Parallax
 
-  var slideParallaxScene = new ScrollMagic.Scene({
-      triggerElement: ".hero-section",
-      triggerHook: 0,
-      duration: "100%"
+    //*************************
+    // Home page animations
+    //*************************
 
-    })
-    .setTween(TweenMax.to('.bcg', 1, {
-      y: '+30%',
-      ease: Power0.easeNone
-    }))
-    .addTo(controller);
+    //Parallax
+
+    var slideParallaxScene = new ScrollMagic.Scene({
+        triggerElement: ".hero-section",
+        triggerHook: 0,
+        duration: "100%"
+
+      })
+      .setTween(TweenMax.to('.bcg', 1, {
+        y: '+30%',
+        ease: Power0.easeNone
+      }))
+      .addTo(controller);
 
     // Change opacity of welcome text on slide
 
@@ -220,40 +270,78 @@ Barba.Pjax.getTransition = function() {
           ease: Power0.easeNone
         }))
         .addTo(controller);
-  }
+    }
 
-  // Slide in first paragraph of main page
+    // H1 Animation
+    $('h1', 'main').each(function() {
+      var fadeInTitle = new ScrollMagic.Scene({
+          triggerElement: this,
+          triggerHook: 0.6,
+          reverse: false
+        })
+        .setTween(TweenMax.from(this, 1, {
+          opacity: 0,
+          y: '+10%',
+          ease: Expo.easeOut
+        }))
+        .addTo(controller);
+    });
 
-    var fadeInIntro = new ScrollMagic.Scene({
-        triggerElement: "#introText",
-        triggerHook: 0.7,
-        reverse: false
 
-      })
-      .setTween(TweenMax.from("#introText", 1, {
-        opacity: '0',
-        y: '10%',
-        ease: Expo.easeOut
-      }))
-      .addTo(controller);
 
-      // Animate each card
+    // Animate each service card
 
-  $('.project-card').each(function() {
+    $('.small-card').each(function() {
+      $(this).append('<div class="revealing-block"></div>');
+
+      var tlSrBlockReveal = new TimelineMax();
+      var srRevealingBlock = $(".revealing-block", ".small-card");
+      var srCard = $(this);
+      var srCardColor = srCard.css('background-color');
+      var srIcon = $(".big-icon",this);
+      var srTitle = $("h3",this);
+      var srText = $("p",this);
+
+      tlSrBlockReveal
+        .to(srCard, 0, { backgroundColor: "white" })
+        .to(srRevealingBlock, 0.35, { width: '100%', ease: Expo.easeOut })
+        .to(srCard, 0.1, { backgroundColor: srCardColor })
+        .to(srRevealingBlock, 0.5, { left: '100%', ease: Expo.easeOut })
+        .set(srIcon, {className: "big-icon draw-animation"},"-=0.5")
+        .from(srTitle, 1, { opacity: '0', y: '10%', ease: Expo.easeOut }, "-=0.5")
+        .from(srText, 1, { opacity: '0', y: '10%', ease: Expo.easeOut }, "-=0.8");
+
+
+      var fadeInContent = new ScrollMagic.Scene({
+          triggerElement: this,
+          triggerHook: 0.7,
+          reverse: false
+        })
+        .setTween(tlSrBlockReveal)
+        .addTo(controller);
+    });
+
+    //Animate stroke
+
+
+
+    // Animate each project card
+
+    $('.project-card').each(function() {
       $(".image-container", this).append('<div class="revealing-block"></div>');
 
-      var revealingBlock = $(".revealing-block", this);
+      var revealingBlock = $(".revealing-block", ".image-container");
       var innerImage = $("img", this);
       var outsideText = $(".text-wrapper", this);
       var tlBlockReveal = new TimelineMax();
 
       tlBlockReveal
-                    .to(innerImage, 0, { opacity: 0 })
-                    .to(outsideText, 0, { opacity: 0, ease: Expo.easeOut })
-                    .to(revealingBlock, 0.5, { width: '100%', ease: Expo.easeOut })
-                    .to(innerImage, 0.2, { opacity: 1, ease: Expo.easeOut }, "-=0.1")
-                    .to(revealingBlock, 0.5, { left: '100%', ease: Expo.easeOut }, "-=0.1")
-                    .fromTo(outsideText, 1, { y: "+10%", opacity: 0}, { y: "0%", opacity: 1, ease: Expo.easeOut},"-=0.2");
+        .to(innerImage, 0, { opacity: 0 })
+        .to(outsideText, 0, { opacity: 0, ease: Expo.easeOut })
+        .to(revealingBlock, 0.35, { width: '100%', ease: Expo.easeOut })
+        .to(innerImage, 0.2, { opacity: 1, ease: Expo.easeOut }, "-=0.1")
+        .to(revealingBlock, 0.5, { left: '100%', ease: Expo.easeOut }, "-=0.1")
+        .fromTo(outsideText, 1, { y: "+10%", opacity: 0 }, { y: "0%", opacity: 1, ease: Expo.easeOut }, "-=0.2");
 
 
       var fadeInContent = new ScrollMagic.Scene({
@@ -263,84 +351,90 @@ Barba.Pjax.getTransition = function() {
         })
         .setTween(tlBlockReveal)
         .addTo(controller);
-  });
+    });
 
-  // CONTACT
+    // CONTACT
 
-      var contactText = $(".main-wrapper", "footer");
-      var fadeInContact = new ScrollMagic.Scene({
-          triggerElement: contactText,
-          triggerHook: 1,
-          reverse: false
-        })
-        .setTween(TweenMax.from(contactText, 1, {  opacity: 0, y: '+10%', ease: Expo.easeOut }))
-        .addTo(controller);
-
-
-  //*************************
-  // Effects inside project
-  //*************************
-
-  // Fade in image header
-
-      $(".project-header", ".project").append('<div class="revealing-block"></div>');
-
-      var prRevealingBlock = $(".revealing-block", ".project");
-      var prInnerImage = $("img", ".project");
-      var prOutsideText = $(".text-wrapper", ".project");
-      var prPostContent = $(".content-wrapper");
-      var tlPrBlockReveal = new TimelineMax();
+    var contactText = $(".main-wrapper", ".color-panel");
+    var fadeInContact = new ScrollMagic.Scene({
+        triggerElement: ".color-panel",
+        triggerHook: 0.5,
+        reverse: false
+      })
+      .setTween(TweenMax.from(contactText, 1, {
+        opacity: 0,
+        y: '+10%',
+        ease: Expo.easeOut
+      }))
+      .addTo(controller);
 
 
-      tlPrBlockReveal
-                    .to(prInnerImage, 0, { opacity: 0 })
-                    .to(prOutsideText, 0, { opacity: 0, ease: Expo.easeOut })
-                    .to(prRevealingBlock, 0.5, { width: '100%', ease: Expo.easeOut },"+=0.5")
-                    .to(prInnerImage, 0.2, { opacity: 1, ease: Expo.easeOut }, "-=0.1")
-                    .to(prRevealingBlock, 0.5, { left: '100%', ease: Expo.easeOut }, "-=0.2")
-                    .from(prPostContent, 1, { opacity: '0', y: '10%', ease: Expo.easeOut },"-=0.4");
 
 
-                    //*************************************
-                    // Add smooth scrolling to anchor links
-                    //*************************************
+    //*************************
+    // Effects inside project
+    //*************************
 
-                    var $root = $('html, body');
+    // Fade in image header
 
-                    $('a[href^="#"]').click(function() {
-                      var href = $.attr(this, 'href');
+    $(".project-header", ".project").append('<div class="revealing-block"></div>');
 
-                      $root.animate({
-                        scrollTop: $(href).offset().top
-                      }, 1600, 'easeInOutQuart', function() {});
+    var prRevealingBlock = $(".revealing-block", ".project");
+    var prInnerImage = $("img", ".project");
+    var prOutsideText = $(".text-wrapper", ".project");
+    var prPostContent = $(".content-wrapper");
+    var tlPrBlockReveal = new TimelineMax();
 
-                    });
+
+    tlPrBlockReveal
+      .to(prInnerImage, 0, { opacity: 0 })
+      .to(prOutsideText, 0, { opacity: 0, ease: Expo.easeOut })
+      .to(prRevealingBlock, 0.5, { width: '100%', ease: Expo.easeOut }, "+=0.5")
+      .to(prInnerImage, 0.2, { opacity: 1, ease: Expo.easeOut }, "-=0.1")
+      .to(prRevealingBlock, 0.3, { left: '100%', ease: Expo.easeOut }, "-=0.2")
+      .from(prPostContent, 1, { opacity: '0', y: '10%', ease: Expo.easeOut }, "-=0.4");
+
+
+    //*************************************
+    // Add smooth scrolling to anchor links
+    //*************************************
+
+    var $root = $('html, body');
+
+    $('a[href^="#"]').click(function() {
+      var href = $.attr(this, 'href');
+
+      $root.animate({
+        scrollTop: $(href).offset().top
+      }, 1600, 'easeInOutQuart', function() {});
+
+    });
 
   }
 
   //DATE
-    now = new Date();
-    start = 2018;
-    theYear = now.getYear();
-    if (theYear < 1900) {
-      theYear = theYear + 1900;
-      if (theYear > start) {
-        $(".date", "span").innerHTML = start + " - " + theYear;
-      } else {
-        $(".date", "span").innerHTML = start;
-      }
+  now = new Date();
+  start = 2018;
+  theYear = now.getYear();
+  if (theYear < 1900) {
+    theYear = theYear + 1900;
+    if (theYear > start) {
+      $(".date", "span").innerHTML = start + " - " + theYear;
+    } else {
+      $(".date", "span").innerHTML = start;
     }
+  }
 
   // ----------------------Snippets------------------
 
   function PageScrollFix(x) {
 
-  // BARBA SCROLL FIX
-  setTimeout(function () {
-    $('html, body').animate({
-          scrollTop: $('#'+x).offset().top
+    // BARBA SCROLL FIX
+    setTimeout(function() {
+      $('html, body').animate({
+        scrollTop: $('#' + x).offset().top
       }, 1000);
-  }, 500);
+    }, 500);
 
   }
 
@@ -378,7 +472,7 @@ Barba.Pjax.getTransition = function() {
     window.scrollTo(scrollPosition[0], scrollPosition[1]);
   }
 
-    // un-lock scroll position
+  // un-lock scroll position
 
   function unlockScroll() {
     var html = jQuery('html');
@@ -388,8 +482,8 @@ Barba.Pjax.getTransition = function() {
   }
 
   // Scroll to anchor on external, BARBA Fixes
-  $( ".burger-wrapper" ).click(function() {
-    menuIn ();
+  $(".burger-wrapper").click(function() {
+    menuIn();
   });
 
 

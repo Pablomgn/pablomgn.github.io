@@ -21,4 +21,41 @@
   xml:space="preserve"
   xmlns:serif="http://www.serif.com/"
   style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:bevel;stroke-miterlimit:1.5;"><rect id="Mesa-de-trabajo1" serif:id="Mesa de trabajo1" x="0" y="0" width="499.997" height="500" style="fill:none;"/><path d="M291.991,374.646l-159.874,-111.161l159.874,-111.161" style="fill:none;stroke:currentColor;stroke-width:46px;"/>
-  </symbol></svg>
+  </symbol>
+
+<symbol
+  id="illustration"
+  viewBox="0 0 64 64"
+  version="1.1"
+  xmlns="http://www.w3.org/2000/svg"
+  xmlns:xlink="http://www.w3.org/1999/xlink"
+  xml:space="preserve"
+  xmlns:serif="http://www.serif.com/"
+  style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:bevel;stroke-miterlimit:1.5;"><rect id="Mesa-de-trabajo1" serif:id="Mesa de trabajo1" x="0" y="0" width="64" height="64" style="fill:none;"/><path fill="none" stroke="currentColor" stroke-width="3" d="M6.452 45l12.366-12.367 4.681 4.681 14.417-14.417 21.177 21.178"/><circle cx="18.64" cy="16.5" r="8.5" fill="none" stroke="currentColor" stroke-width="3"/><path fill="none" stroke="currentColor" stroke-width="3" d="M9.136 49.5h47m-40 5h34"/>
+</symbol>
+
+<symbol
+  id="design"
+  viewBox="0 0 64 64"
+  version="1.1"
+  xmlns="http://www.w3.org/2000/svg"
+  xmlns:xlink="http://www.w3.org/1999/xlink"
+  xml:space="preserve"
+  xmlns:serif="http://www.serif.com/"
+  style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:bevel;stroke-miterlimit:1.5;"><rect id="Mesa-de-trabajo1" serif:id="Mesa de trabajo1" x="0" y="0" width="64" height="64" style="fill:none;"/><path fill="none" d="M0 0h64v64H0z" serif:id="64px Line"/><g fill="none" stroke="currentColor" stroke-width="3"><path d="M9 54l17.257-17.257m4.327-4.327a3.68 3.68 0 1 1-5.204 5.204 3.68 3.68 0 0 1 5.204-5.204z"/><path d="M31.865 19.918l11.217 11.217-3.883 15.099L9 54l7.766-30.199 15.099-3.883zm23.182-.748L43.83 7.953l-6.356 6.356 11.217 11.217 6.356-6.356zm-20.475-2.082l11.34 11.34"/></g>
+</symbol>
+
+<symbol
+  id="development"
+  viewBox="0 0 64 64"
+  version="1.1"
+  xmlns="http://www.w3.org/2000/svg"
+  xmlns:xlink="http://www.w3.org/1999/xlink"
+  xml:space="preserve"
+  xmlns:serif="http://www.serif.com/"
+  style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:bevel;stroke-miterlimit:1.5;"><rect id="Mesa-de-trabajo1" serif:id="Mesa de trabajo1" x="0" y="0" width="64" height="64" style="fill:none;"/><path fill="none" d="M0 0h64v64H0z" serif:id="64px Line"/><path fill="none" d="M.67 0h64v64h-64z" serif:id="64px Line"/><path fill="none" stroke="currentColor" stroke-width="3" d="M8.91 12h47.76v24.33H8.91zm.004 24.333v8.761H56.67v-8.761m-27.765 8.761v9.856m7.774 0v-9.856M15.67 20.5h22.01m-22.01 5h33.455M20.02 54.95h25.544"/>
+</symbol>
+
+
+
+</svg>
