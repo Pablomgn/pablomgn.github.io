@@ -276,18 +276,17 @@ $(document).ready(function() {
     $('h1', 'main').each(function() {
       var fadeInTitle = new ScrollMagic.Scene({
           triggerElement: this,
-          triggerHook: 0.6,
+          triggerHook: 0.65,
           reverse: false
         })
         .setTween(TweenMax.from(this, 1, {
           opacity: 0,
           y: '+10%',
-          ease: Expo.easeOut
+          ease: Expo.easeOut,
+          delay: 0.5
         }))
         .addTo(controller);
     });
-
-
 
     // Animate each service card
 
@@ -320,10 +319,6 @@ $(document).ready(function() {
         .setTween(tlSrBlockReveal)
         .addTo(controller);
     });
-
-    //Animate stroke
-
-
 
     // Animate each project card
 
@@ -369,6 +364,23 @@ $(document).ready(function() {
       .addTo(controller);
 
 
+      // // Black-Bar inside contact
+      // var tlBlackBar = new TimelineMax();
+      // var mainColor = $(".color-panel").css('background-color');
+      // var navLinks = $("a","nav",".top-menu");
+      // var imagotype = $(".imagotype");
+      //
+      // tlBlackBar
+      // .to(navLinks, 0.35,{className: "block-hover negative"},0)
+      // .to(imagotype, 0.35,{className: "imagotype block-hover negative"},0)
+      // .to(menuBackground, 0.35, { backgroundColor: mainColor, ease: Power4.easeInOut }, 0);
+      //
+      // var changeNavColor = new ScrollMagic.Scene({
+      //     triggerElement: ".color-panel",
+      //     triggerHook: 0.1,
+      //   })
+      //   .setTween(tlBlackBar)
+      //   .addTo(controller);
 
 
     //*************************
@@ -412,18 +424,18 @@ $(document).ready(function() {
 
   }
 
-  //DATE
-  now = new Date();
-  start = 2018;
-  theYear = now.getYear();
-  if (theYear < 1900) {
-    theYear = theYear + 1900;
-    if (theYear > start) {
-      $(".date", "span").innerHTML = start + " - " + theYear;
-    } else {
-      $(".date", "span").innerHTML = start;
-    }
-  }
+  // //DATE
+  // now = new Date();
+  // start = 2018;
+  // theYear = now.getYear();
+  // if (theYear < 1900) {
+  //   theYear = theYear + 1900;
+  //   if (theYear > start) {
+  //     $(".date", "span").innerHTML = start + " - " + theYear;
+  //   } else {
+  //     $(".date", "span").innerHTML = start;
+  //   }
+  // }
 
   // ----------------------Snippets------------------
 
@@ -482,9 +494,9 @@ $(document).ready(function() {
   }
 
   // Scroll to anchor on external, BARBA Fixes
-  $(".burger-wrapper").click(function() {
-    menuIn();
-  });
+  // $(".burger-wrapper").click(function() {
+  //   menuIn();
+  // });
 
 
   // //Language Redirect

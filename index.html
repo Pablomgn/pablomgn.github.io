@@ -20,7 +20,7 @@
   <link rel="stylesheet" href="css/main.min.css">
 
   <!-- Global site tag (gtag.js) - Google Analytics -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-125435154-1"></script>
+  <!-- <script async src="https://www.googletagmanager.com/gtag/js?id=UA-125435154-1"></script> -->
   <script>
     window.dataLayer = window.dataLayer || [];
 
@@ -94,8 +94,8 @@
         <li><a class="block-hover" href="#services">Servicios</a></li>
         <li><a class="block-hover" href="#works">Proyectos</a></li>
         <li><a class="block-hover" href="#contact">Contacto</a></li>
-        <li><a class="block-hover" href="sobre">Sobre</a></li>
-        <li><a class="block-hover" href="/en">EN</a></li>
+        <li><a class="block-hover" href="sobre.html">Sobre</a></li>
+        <li><a class="block-hover" href="/en" onclick="setLanguage('ENGLISH')">EN</a></li>
       </ul>
     </nav>
   </div>
@@ -118,7 +118,7 @@
           <h1>Servicios</h1>
           </header>
           <div class="small-card"><svg class="big-icon"><use xlink:href="img/brand/isotype.svg#development"/></svg>
-          <h3>Desarrollo y diseño web</h3><p>Diseño web Resonsive, SEO y compatible con WordPress.</p></div>
+          <h3>Desarrollo y Diseño Web</h3><p>Diseño web Resonsive, SEO y compatible con WordPress.</p></div>
           <div class="small-card">
             <svg class="big-icon"><use xlink:href="img/brand/isotype.svg#design"/></svg>
             <h3>Diseño Gráfico y Digital</h3><p>Especializado en diseño digital para cualquier tipo de aplicación, disponible también para imprenta.</p></div>
@@ -128,46 +128,52 @@
       </section>
       <div id="works" class="anchor"></div>
       <section>
-        <div id="project1" class="project-anchor"></div>
         <header class="project-card" style="margin-top:0; margin-bottom: 0;"><h1>Proyectos</h1></header>
+        <div id="project1" class="project-anchor"></div>
         <section class="project-card" style="margin-top:75px;">
           <div class="image-container block-reveal">
-            <img src="img/prevs/music-festival-illustration.jpg" alt="Ilustración vectorial para Green Galaxy Festival">
+            <a href="/projects/green-galaxy.html" class="image-hover">
+              <img src="/img/prevs/music-festival-illustration.jpg" alt="Ilustración vectorial para Green Galaxy Festival">
+            </a>
           </div>
 
             <div class="text-wrapper">
               <header><h2>Green Galaxy Festival</h2>
               </header>
               <p>Identidad visual para un festival de música organizado en Asturias.</p>
-              <a href="/projects/green-galaxy" class="block-hover class="html5lightbox" data-width="960" data-height="600"">Ver más</a>
+              <a href="/projects/green-galaxy.html" class="block-hover class="html5lightbox" data-width="960" data-height="600"">Ver más</a>
             </div>
         </section>
 
         <div id="project2" class="project-anchor"></div>
         <section class="project-card">
           <div class="image-container alternate block-reveal">
-            <img src="img/prevs/teller-cameras.jpg" alt="Visualización de packaging para Teller Cameras">
+            <a href="/projects/teller-cameras.html" class="image-hover">
+              <img src="img/prevs/teller-cameras.jpg" alt="Visualización de packaging para Teller Cameras">
+            </a>
           </div>
 
             <div class="text-wrapper">
               <header><h2>Teller Cameras</h2>
               </header>
               <p>Branding, packaging y visualización para una marca de cámaras analógicas.</p>
-              <a href="/projects/teller-cameras" class="block-hover">Ver más</a>
+              <a href="/projects/teller-cameras.html" class="block-hover">Ver más</a>
             </div>
         </section>
 
         <div id="project3" class="project-anchor"></div>
         <section class="project-card">
           <div class="image-container block-reveal">
-            <img src="img/prevs/cartoon-guy.jpg" alt="Render del busto de un hombre modelado en 3D con estilo 'cartoon'">
+            <a href="/projects/cartoon-character.html" class="image-hover">
+              <img src="img/prevs/cartoon-guy.jpg" alt="Render del busto de un hombre modelado en 3D con estilo 'cartoon'">
+            </a>
           </div>
 
             <div class="text-wrapper">
               <header><h2>Ian</h2>
               </header>
               <p>Modelo 3D desarrollado como proyecto personal.</p>
-              <a href="/projects/cartoon-character" class="block-hover">Ver más</a>
+              <a href="/projects/cartoon-character.html" class="block-hover">Ver más</a>
             </div>
         </section>
       </section>
@@ -181,17 +187,17 @@
         <h1>Ponte en contacto</h1>
         <p>Si quieres trabajar conmigo o tienes alguna pregunta, ¡no dudes en mandarme un correo!</p>
         <address>
-            <a href="mailto:hola@pablomarin.es" class="block-hover negative"><svg class="icon"><use xlink:href="../img/icons.svg#mail"/></svg> hola@pablomarin.es</a>
-            <div><a href="https://behance.net/pablomgn" class="block-hover negative" target="_blank"><svg class="icon"><use xlink:href="../img/social-icons.svg#behance"/></svg></a>
-            <a href="https://instagram.com/pablomgn" class="block-hover negative" target="_blank"><svg class="icon"><use xlink:href="../img/social-icons.svg#instagram"/></svg></a>
-            <a href="https://twitter.com/pablomgn" class="block-hover negative" target="_blank"><svg class="icon"><use xlink:href="../img/social-icons.svg#twitter"/></svg></a></div>
+            <a href="mailto:hola@pablomarin.es" class="block-hover negative"><svg class="icon"><use xlink:href="/img/icons.svg#mail"/></svg> hola@pablomarin.es</a>
+            <div><a href="https://behance.net/pablomgn" class="block-hover negative" target="_blank"><svg class="icon"><use xlink:href="/img/social-icons.svg#behance"/></svg></a>
+            <a href="https://instagram.com/pablomgn" class="block-hover negative" target="_blank"><svg class="icon"><use xlink:href="/img/social-icons.svg#instagram"/></svg></a>
+            <a href="https://twitter.com/pablomgn" class="block-hover negative" target="_blank"><svg class="icon"><use xlink:href="/img/social-icons.svg#twitter"/></svg></a></div>
           </address>
         <br>
       </div>
 
       <div class="legal-wrapper">
         <div class="main-wrapper project-card ">
-          <a href="/admin/legal-notice" class="block-hover negative">Aviso Legal</a>
+          <a href="/admin/legal-notice.html" class="block-hover negative">Aviso Legal</a>
           <p>&copy;
             <span class="date"></span>
             PABLO MARÍN</p>
@@ -206,7 +212,7 @@
     <div class="cookie-wrapper">
       <div class="consent-text">
         <p> Esta página web usa cookies para ver su tráfico.
-          <a href="admin/legal-notice" target="_blank" style="color: white; font-weight: bold;">Más información aquí.</a>
+          <a href="admin/legal-notice.html" target="_blank" style="color: white; font-weight: bold;">Más información aquí.</a>
         </p>
       </div>
       <div class="consent-button block-hover negative">
@@ -240,6 +246,7 @@
     ga.l = +new Date;
     ga('create', 'UA-125435154-1', 'auto');
     ga('send', 'pageview')
+
     function PageScrollFix(x) {
 
     // BARBA SCROLL FIX
@@ -248,8 +255,15 @@
             scrollTop: $('#'+x).offset().top
         }, 1000);
     }, 500);
-
   }
+
+  function setLanguage(x) {
+    $.cookie("LANGUAGE", x, {
+      path: '/',
+      expires: 365
+    });
+  }
+
   </script>
   <script src="https://www.google-analytics.com/analytics.js" async defer></script>
   <script>
@@ -261,18 +275,25 @@
       TweenMax.to($(preloader), 1, { left: "100%", ease: Expo.easeOut, onComplete: function() { $(preloader).remove();} });
     }
 
-  //   window.onload = function() {
-  //   if (sessionStorage.getItem('dontLoad') == null)
-  //     {
-  //       TweenMax.to($(preloader), 1, { left: "100%", ease: Expo.easeOut, onComplete: function() { $(preloader).remove();} });
-  //       TweenMax.to($(preloader), 1, { left: "100%", ease: Expo.easeOut, onComplete: function() { $(preloader).remove();} });
-  //       sessionStorage.setItem('dontLoad', 'true');
-  //     } else {
-  //       document.getElementById('preloader').remove();
-  //     }
-  // };
+    //Language Redirect
+
+    var language = navigator.language || navigator.browserLanguage; //for IE
+
+    // alert(language);
+
+
+    if (language.indexOf('es' || 'ca' || 'gl') < 0) {
+      if( $.cookie('LANGUAGE') !== 'SPANISH' || !$.cookie('LANGUAGE')){
+        window.location.href = window.location.href + 'en';
+      }
+    }
+
+    if( $.cookie('LANGUAGE') === 'ENGLISH' || !$.cookie('LANGUAGE')){
+      window.location.href = window.location.href + 'en';
+    }
 
   </script>
+
 </body>
 
 </html>
