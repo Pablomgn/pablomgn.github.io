@@ -39,22 +39,13 @@ $(document).ready(function() {
 
   var FadeTransition = Barba.BaseTransition.extend({
     start: function() {
-      /**
-       * This function is automatically called as soon the Transition starts
-       * this.newContainerLoading is a Promise for the loading of the new container
-       * (Barba.js also comes with an handy Promise polyfill!)
-       */
 
-      // As soon the loading is finished and the old page is faded out, let's fade the new page
       Promise
         .all([this.newContainerLoading, this.fadeOut()])
         .then(this.fadeIn.bind(this));
     },
 
     fadeOut: function() {
-      /**
-       * this.oldContainer is the HTMLElement of the old Container
-       */
 
       $("body").append("<div class='page-transition'></div>");
 
@@ -84,17 +75,6 @@ $(document).ready(function() {
     },
 
     fadeIn: function() {
-      /**
-       * this.newContainer is the HTMLElement of the new Container
-       * At this stage newContainer is on the DOM (inside our #barba-container and with visibility: hidden)
-       * Please note, newContainer is available just after newContainerLoading is resolved!
-       */
-
-      // $(window).scrollTop(0);
-      //
-      // if ('scrollRestoration' in history) {
-      //   history.scrollRestoration = 'manual';
-      // }
 
       var _this = this;
       var $el = $(this.newContainer);
@@ -119,16 +99,8 @@ $(document).ready(function() {
     }
   });
 
-  /**
-   * Next step, you have to tell Barba to use the new Transition
-   */
 
   Barba.Pjax.getTransition = function() {
-    /**
-     * Here you can use your own logic!
-     * For example you can use different Transition based on the current page or link...
-     */
-
     return FadeTransition;
   };
 
@@ -276,14 +248,14 @@ $(document).ready(function() {
     $('h1', 'main').each(function() {
       var fadeInTitle = new ScrollMagic.Scene({
           triggerElement: this,
-          triggerHook: 0.65,
+          triggerHook: 0.70,
           reverse: false
         })
         .setTween(TweenMax.from(this, 1, {
           opacity: 0,
           y: '+10%',
           ease: Expo.easeOut,
-          delay: 0.5
+          delay: 0.3
         }))
         .addTo(controller);
     });
@@ -297,18 +269,38 @@ $(document).ready(function() {
       var srRevealingBlock = $(".revealing-block", ".small-card");
       var srCard = $(this);
       var srCardColor = srCard.css('background-color');
-      var srIcon = $(".big-icon",this);
-      var srTitle = $("h3",this);
-      var srText = $("p",this);
+      var srIcon = $(".big-icon", this);
+      var srTitle = $("h3", this);
+      var srText = $("p", this);
 
       tlSrBlockReveal
-        .to(srCard, 0, { backgroundColor: "white" })
-        .to(srRevealingBlock, 0.35, { width: '100%', ease: Expo.easeOut })
-        .to(srCard, 0.1, { backgroundColor: srCardColor })
-        .to(srRevealingBlock, 0.5, { left: '100%', ease: Expo.easeOut })
-        .set(srIcon, {className: "big-icon draw-animation"},"-=0.5")
-        .from(srTitle, 1, { opacity: '0', y: '10%', ease: Expo.easeOut }, "-=0.5")
-        .from(srText, 1, { opacity: '0', y: '10%', ease: Expo.easeOut }, "-=0.8");
+        .to(srCard, 0, {
+          backgroundColor: "white"
+        })
+        .to(srRevealingBlock, 0.35, {
+          width: '100%',
+          ease: Expo.easeOut
+        })
+        .to(srCard, 0.1, {
+          backgroundColor: srCardColor
+        })
+        .to(srRevealingBlock, 0.5, {
+          left: '100%',
+          ease: Expo.easeOut
+        })
+        .set(srIcon, {
+          className: "big-icon draw-animation"
+        }, "-=0.5")
+        .from(srTitle, 1, {
+          opacity: '0',
+          y: '10%',
+          ease: Expo.easeOut
+        }, "-=0.5")
+        .from(srText, 1, {
+          opacity: '0',
+          y: '10%',
+          ease: Expo.easeOut
+        }, "-=0.8");
 
 
       var fadeInContent = new ScrollMagic.Scene({
@@ -331,12 +323,33 @@ $(document).ready(function() {
       var tlBlockReveal = new TimelineMax();
 
       tlBlockReveal
-        .to(innerImage, 0, { opacity: 0 })
-        .to(outsideText, 0, { opacity: 0, ease: Expo.easeOut })
-        .to(revealingBlock, 0.35, { width: '100%', ease: Expo.easeOut })
-        .to(innerImage, 0.2, { opacity: 1, ease: Expo.easeOut }, "-=0.1")
-        .to(revealingBlock, 0.5, { left: '100%', ease: Expo.easeOut }, "-=0.1")
-        .fromTo(outsideText, 1, { y: "+10%", opacity: 0 }, { y: "0%", opacity: 1, ease: Expo.easeOut }, "-=0.2");
+        .to(innerImage, 0, {
+          opacity: 0
+        })
+        .to(outsideText, 0, {
+          opacity: 0,
+          ease: Expo.easeOut
+        })
+        .to(revealingBlock, 0.35, {
+          width: '100%',
+          ease: Expo.easeOut
+        })
+        .to(innerImage, 0.2, {
+          opacity: 1,
+          ease: Expo.easeOut
+        }, "-=0.1")
+        .to(revealingBlock, 0.5, {
+          left: '100%',
+          ease: Expo.easeOut
+        }, "-=0.1")
+        .fromTo(outsideText, 1, {
+          y: "+10%",
+          opacity: 0
+        }, {
+          y: "0%",
+          opacity: 1,
+          ease: Expo.easeOut
+        }, "-=0.2");
 
 
       var fadeInContent = new ScrollMagic.Scene({
@@ -364,23 +377,23 @@ $(document).ready(function() {
       .addTo(controller);
 
 
-      // // Black-Bar inside contact
-      // var tlBlackBar = new TimelineMax();
-      // var mainColor = $(".color-panel").css('background-color');
-      // var navLinks = $("a","nav",".top-menu");
-      // var imagotype = $(".imagotype");
-      //
-      // tlBlackBar
-      // .to(navLinks, 0.35,{className: "block-hover negative"},0)
-      // .to(imagotype, 0.35,{className: "imagotype block-hover negative"},0)
-      // .to(menuBackground, 0.35, { backgroundColor: mainColor, ease: Power4.easeInOut }, 0);
-      //
-      // var changeNavColor = new ScrollMagic.Scene({
-      //     triggerElement: ".color-panel",
-      //     triggerHook: 0.1,
-      //   })
-      //   .setTween(tlBlackBar)
-      //   .addTo(controller);
+    // // Black-Bar inside contact
+    // var tlBlackBar = new TimelineMax();
+    // var mainColor = $(".color-panel").css('background-color');
+    // var navLinks = $("a","nav",".top-menu");
+    // var imagotype = $(".imagotype");
+    //
+    // tlBlackBar
+    // .to(navLinks, 0.35,{className: "block-hover negative"},0)
+    // .to(imagotype, 0.35,{className: "imagotype block-hover negative"},0)
+    // .to(menuBackground, 0.35, { backgroundColor: mainColor, ease: Power4.easeInOut }, 0);
+    //
+    // var changeNavColor = new ScrollMagic.Scene({
+    //     triggerElement: ".color-panel",
+    //     triggerHook: 0.1,
+    //   })
+    //   .setTween(tlBlackBar)
+    //   .addTo(controller);
 
 
     //*************************
@@ -399,12 +412,30 @@ $(document).ready(function() {
 
 
     tlPrBlockReveal
-      .to(prInnerImage, 0, { opacity: 0 })
-      .to(prOutsideText, 0, { opacity: 0, ease: Expo.easeOut })
-      .to(prRevealingBlock, 0.5, { width: '100%', ease: Expo.easeOut }, "+=0.5")
-      .to(prInnerImage, 0.2, { opacity: 1, ease: Expo.easeOut }, "-=0.1")
-      .to(prRevealingBlock, 0.3, { left: '100%', ease: Expo.easeOut }, "-=0.2")
-      .from(prPostContent, 1, { opacity: '0', y: '10%', ease: Expo.easeOut }, "-=0.4");
+      .to(prInnerImage, 0, {
+        opacity: 0
+      })
+      .to(prOutsideText, 0, {
+        opacity: 0,
+        ease: Expo.easeOut
+      })
+      .to(prRevealingBlock, 0.5, {
+        width: '100%',
+        ease: Expo.easeOut
+      }, "+=0.5")
+      .to(prInnerImage, 0.2, {
+        opacity: 1,
+        ease: Expo.easeOut
+      }, "-=0.1")
+      .to(prRevealingBlock, 0.3, {
+        left: '100%',
+        ease: Expo.easeOut
+      }, "-=0.2")
+      .from(prPostContent, 1, {
+        opacity: '0',
+        y: '10%',
+        ease: Expo.easeOut
+      }, "-=0.4");
 
 
     //*************************************
@@ -424,94 +455,126 @@ $(document).ready(function() {
 
   }
 
-  // //DATE
-  // now = new Date();
-  // start = 2018;
-  // theYear = now.getYear();
-  // if (theYear < 1900) {
-  //   theYear = theYear + 1900;
-  //   if (theYear > start) {
-  //     $(".date", "span").innerHTML = start + " - " + theYear;
-  //   } else {
-  //     $(".date", "span").innerHTML = start;
-  //   }
-  // }
+  //***************************
+  // MISC
+  //***************************
 
-  // ----------------------Snippets------------------
+  console.log("%cPeeking around, huh?", "color: black; font-family: Archia, sans-serif; font-size: 2.5em; font-weight: bolder; 1px 1px;");
+  console.log("%cIf you have any questions or see anything wrong with the web, send me an email!", "color: black; font-family: sans-serif; font-size: 1.5em; font-weight: normal; 1px 1px;");
 
-  function PageScrollFix(x) {
+  //***************************
+  // COOKIES
+  //***************************
 
-    // BARBA SCROLL FIX
-    setTimeout(function() {
-      $('html, body').animate({
-        scrollTop: $('#' + x).offset().top
-      }, 1000);
-    }, 500);
+  var cookieWarning = $(".cookie-warning");
 
+  if ($.cookie('CONSENT')) {
+    cookieWarning.remove();
+  } else {
+
+    $(".cookie-warning").removeClass("hidden");
+
+    var cookieTl = new TimelineMax();
+
+    cookieTl
+      .from(cookieWarning, 1, {
+        bottom: "-100%",
+        ease: Expo.easeOut
+      }, "=+4");
+
+    $(".consent-button").click(function() {
+      giveConsent();
+    });
+
+    window['ga-disable-UA-125435154-1'] = true;
+
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-125435154-1']);
+    _gaq.push(['_trackPageview']);
   }
 
-  // *************************
-  // Delay external page load
-  // *************************
-
-  // $("a").click(function(e) {
-  //   if ($(this).attr('target') !== '_blank') {
-  //     e.preventDefault(); // prvent default behavior
-  //
-  //     var goTo = this.getAttribute("href"); // store anchor href
-  //
-  //     setTimeout(function() {
-  //       window.location = goTo;
-  //     }, 1000);
-  //   }
-  // });
-
-  // ********************
-  // Lock page scrolling
-  // ********************
-
-  //lock scroll position, but retain settings for later
-
-  function lockScroll() {
-    var scrollPosition = [
-      self.pageXOffset || document.documentElement.scrollLeft || document.body.scrollLeft,
-      self.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop
-    ];
-    var html = jQuery('html');
-    html.data('scroll-position', scrollPosition);
-    html.data('previous-overflow', html.css('overflow'));
-    html.css('overflow', 'hidden');
-    window.scrollTo(scrollPosition[0], scrollPosition[1]);
+  function giveConsent() {
+    cookieTl.reverse();
+    $.cookie("CONSENT", "1", {
+      path: '/',
+      expires: 365
+    });
+    console.log($.cookie("CONSENT"));
+    window['ga-disable-UA-125435154-1'] = false;
+    //...snip...
+    //set a cookie to express that the user has opted-in to tracking, for future pageviews
+    _gaq.push(['_trackPageview']); // now run the pageview that you 'missed
   }
 
-  // un-lock scroll position
+  //*****************************
+  // SNIPPETS
+  //*****************************
 
-  function unlockScroll() {
-    var html = jQuery('html');
-    var scrollPosition = html.data('scroll-position');
-    html.css('overflow', html.data('previous-overflow'));
-    window.scrollTo(scrollPosition[0], scrollPosition[1]);
+  //Update Google analytics
+
+  Barba.Dispatcher.on('initStateChange', function() {
+    ga('send', 'pageview', location.pathname);
+  });
+
+  var preloader = document.getElementById('preloader');
+
+  window.onload = function() {
+    TweenMax.to($(preloader), 1, {
+      left: "100%",
+      ease: Expo.easeOut,
+      onComplete: function() {
+        $(preloader).remove();
+      }
+    });
+    TweenMax.to($(preloader), 1, {
+      left: "100%",
+      ease: Expo.easeOut,
+      onComplete: function() {
+        $(preloader).remove();
+      }
+    });
+  };
+
+  //Display Age
+
+  function getAge(bornYear) {
+    now = new Date();
+    theYear = now.getYear();
+    if (theYear < 1900) {
+      theYear = theYear + 1900;
+    }
+    age = theYear - bornYear;
+    return age;
   }
 
-  // Scroll to anchor on external, BARBA Fixes
-  // $(".burger-wrapper").click(function() {
-  //   menuIn();
-  // });
+  $('.getAge').each(function() {
+    $(this).html(getAge(1996));
+  });
 
+  // Display getYear
 
-  // //Language Redirect
-  //
-  // var language = navigator.language || navigator.browserLanguage; //for IE
-  //
-  // // alert(language);
-  //
-  // if (language.indexOf('es' || 'ca' || 'gl') > -1 && window.location.href == "https://pablomarin.es") {
-  // //document.location.href = 'https://pablomarin.es';
-  // } else {
-  // var str = window.location.href;
-  // var result= str.substring(0,26) + "en/" + str.substring(26);
-  // window.location.href = result;
-  // }
+  function getYearSpan(start) {
+
+    now = new Date();
+    theYear = now.getYear();
+    var result;
+    if (theYear < 1900) {
+      theYear = theYear + 1900;
+      if (theYear > start) {
+        result = start + " - " + theYear;
+
+      } else {
+        result = start;
+      }
+    }
+    return result;
+  }
+
+  $('.getYearSpan').each(function() {
+    var original = $(this).text();
+    $(this).html(getYearSpan(original));
+  });
+
 
   //***********
   // JQuery End
@@ -519,3 +582,21 @@ $(document).ready(function() {
 
 
 });
+
+
+function PageScrollFix(x) {
+
+  // BARBA SCROLL FIX
+  setTimeout(function() {
+    $('html, body').animate({
+      scrollTop: $('#' + x).offset().top
+    }, 1000);
+  }, 500);
+}
+
+function setLanguage(x) {
+  $.cookie("LANGUAGE", x, {
+    path: '/',
+    expires: 365
+  });
+}

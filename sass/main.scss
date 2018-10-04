@@ -1,14 +1,28 @@
+//**************
+// Imports
+//**************
+
+@import "../css/normalize";
+@import "../fonts/archia-webfont/font";
+
+//**************
+// Variables
+//**************
+
 $main-color: #111111;
 $selection-color:rgba($main-color,0.99);
 $debug-color: RGBA(0,0,255,0);
 $bouncy-transition: all 800ms cubic-bezier(0.68, -0.55, 0.265, 1.55); // -------- Typography
-@import "../fonts/archia-webfont/font.css";
 $accent-font: 'Archia', Helvetica, Arial, sans-serif;
-$body-font: Helvetica, Arial, sans-serif;
-$default-font-size: 1.35em;
+$body-font: Arial, sans-serif;
+$default-font-size: 1.30em;
 $default-font-color: #111111;
 $topbar-innerpadding: 20px;
+
+//**************
 // Breakpoints
+//**************
+
 $bp-xxxsmall: 17.5em; //280px
 $bp-xsmall: 23.43em; // 475px
 $bp-small: 47.9em; // 768px
@@ -17,17 +31,8 @@ $bp-large: 85.376em; // 1366px
 $bp-xlarge: 120em; // 1920px
 $bp-xxlarge: 160em; // 2560px
 
-@mixin linear-gradient($color-one,$color-two,$degrees) {
-  background: -moz-linear-gradient($degrees, $color-one 0%, $color-two 100%); /* ff3.6+ */
-  background: -webkit-gradient(linear, left top, right top, color-stop(0%, $color-one), color-stop(100%, $color-two)); /* safari4+,chrome */
-  background: -webkit-linear-gradient($degrees, $color-one 0%, $color-two 100%); /* safari5.1+,chrome10+ */
-  background: -o-linear-gradient($degrees, $color-one 0%, $color-two 100%); /* opera 11.10+ */
-  background: -ms-linear-gradient($degrees, $color-one 0%, $color-two 100%); /* ie10+ */
-  background: linear-gradient($degrees, $color-one 0%, $color-two 100%); /* w3c */
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='$color-one', endColorstr='$color-two',GradientType=1 ); /* ie6-9 */
-}
-
 // -------- Selection color
+
 a,
 h1,
 h2,
@@ -76,8 +81,7 @@ img {
 }
 
 h1,
-h2,
-h3 {
+ {
   &:after {
     content: '';
     display: block;
@@ -88,6 +92,22 @@ h3 {
     background-color: $default-font-color;
   }
 }
+
+.project-card {
+  h2,
+  h3 {
+    &:after {
+      content: '';
+      display: block;
+      width: 50%;
+      max-width: 300px;
+      height: 7px;
+      margin: 20px 0;
+      background-color: $default-font-color;
+    }
+  }
+}
+
 
 .color-panel,
 .small-card {
@@ -108,9 +128,6 @@ h3:after {
   height: 5px;
 }
 
-p {
-  opacity: 0.8;
-}
 // -------- General Setup
 
 body {
@@ -137,6 +154,7 @@ h1 {
 }
 
 h2 {
+  max-width: 600px;
   font-size: $default-font-size*1.5;
   @media only screen and (max-width: $bp-small) {
     font-size: $default-font-size*1.5;
@@ -144,6 +162,7 @@ h2 {
 }
 
 h3 {
+  max-width: 600px;
   font-size: $default-font-size*1;
   @media only screen and (max-width: $bp-small) {
     font-size: $default-font-size*1;
@@ -194,10 +213,6 @@ body {
     min-width: $bp-xxxsmall;
     background-color: $debug-color;
     z-index: 100;
-
-    a {
-      //color: $main-color;
-    }
 
     .imagotype {
       position: absolute;
@@ -389,9 +404,7 @@ body {
       bottom: 0;
     }
   }
-
   //image block-hover
-
   .image-hover {
     &::after {
       content: '';
@@ -408,7 +421,7 @@ body {
     }
 
     &::before {
-      content: url('/img/brand/details.svg');
+      content: url("/img/brand/details.svg");
       font-size: 60px;
       color: white;
       text-align: center;
@@ -441,9 +454,7 @@ body {
         top: 50%;
       }
     }
-
   }
-
   // Set hover effect as default when on mobile
   @media only screen and (max-width: $bp-small) {
     .cookie-warning,
@@ -463,6 +474,11 @@ body {
         }
       }
     }
+  }
+
+  .cookies-table {
+    font-size: $default-font-size*0.7;
+    color: #555;
   }
 
   .block-hover.negative {
@@ -621,7 +637,6 @@ body {
       stroke-dashoffset: 700;
       animation: dash 5s linear forwards;
     }
-
     @keyframes dash {
       to {
         stroke-dashoffset: 0;
@@ -703,7 +718,7 @@ body {
 
     .content-wrapper {
       img {
-        padding: 50px 0;
+        margin-top: 50px;
       }
     }
   }

@@ -4,8 +4,8 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
-  <title>Pablo Marín - Art & Design</title>
-  <meta name="description" content="Professionally designed websites, brands and illustrations, both 3D and 2D.">
+  <title>Pablo Marín - Digital Design</title>
+  <meta name="description" content="Responsive website development. Illustrations, visualization and 3d Models. Graphic Design from logos to brands.">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no, maximum-scale=1, user-scalable=0">
 
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
@@ -16,11 +16,11 @@
   <meta name="msapplication-TileColor" content="#000000">
   <meta name="theme-color" content="#ffffff">
 
-  <link rel="stylesheet" href="/css/normalize.css">
   <link rel="stylesheet" href="/css/main.min.css">
 
   <!-- Global site tag (gtag.js) - Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=UA-125435154-1"></script>
+
   <script>
     window.dataLayer = window.dataLayer || [];
 
@@ -32,27 +32,9 @@
     gtag('config', 'UA-125435154-1');
   </script>
 
-  <!-- Google Tag Manager -->
-  <script>
-    (function(w, d, s, l, i) {
-      w[l] = w[l] || [];
-      w[l].push({
-        'gtm.start': new Date().getTime(),
-        event: 'gtm.js'
-      });
-      var f = d.getElementsByTagName(s)[0],
-        j = d.createElement(s),
-        dl = l != 'dataLayer' ? '&l=' + l : '';
-      j.async = true;
-      j.src =
-        'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
-      f.parentNode.insertBefore(j, f);
-    })(window, document, 'script', 'dataLayer', 'GTM-KNZKB9P');
-  </script>
-  <!-- End Google Tag Manager -->
 </head>
 
-<body onload="init()">
+<body>
 
   <!--CSS Spinner-->
   <div class="spinner-wrapper" id="preloader">
@@ -188,7 +170,7 @@
         <h1>Get in touch</h1>
         <p>If you'd like to work with me or have any questions feel free to send an email!</p>
         <address>
-            <a href="mailto:hello@pablomarin.es" class="block-hover negative"><svg class="icon"><use xlink:href="/img/icons.svg#mail"/></svg> hello@pablomarin.es</a>
+            <a href="&#109;&#97;&#105;&#108;&#x74;&#x6f;&#x3a;&#x68;&#101;&#108;&#108;&#x6f;&#64;&#x70;&#97;&#x62;&#x6c;&#111;&#109;&#97;&#x72;&#105;&#110;&#46;&#101;&#115;" class="block-hover negative"><svg class="icon"><use xlink:href="/img/icons.svg#mail"/></svg> &#x68;&#101;&#108;&#108;&#x6f;&#64;&#x70;&#97;&#x62;&#x6c;&#111;&#109;&#97;&#x72;&#105;&#110;&#46;&#101;&#115;</a>
             <div><a href="https://behance.net/pablomgn" class="block-hover negative" target="_blank"><svg class="icon"><use xlink:href="/img/social-icons.svg#behance"/></svg></a>
             <a href="https://instagram.com/pablomgn" class="block-hover negative" target="_blank"><svg class="icon"><use xlink:href="/img/social-icons.svg#instagram"/></svg></a>
             <a href="https://twitter.com/pablomgn" class="block-hover negative" target="_blank"><svg class="icon"><use xlink:href="/img/social-icons.svg#twitter"/></svg></a></div>
@@ -199,9 +181,13 @@
       <div class="legal-wrapper">
         <div class="main-wrapper project-card ">
           <a href="admin/en/legal-notice.html" class="block-hover negative">Legal Notice</a>
-          <p>&copy;
-            <span class="date"></span>
-            PABLO MARÍN</p>
+          <p>
+            &copy;
+            <span class="getYearSpan">
+              2018
+            </span>
+            PABLO MARÍN
+          </p>
         </div>
       </div>
       </div>
@@ -213,7 +199,7 @@
     <div class="cookie-wrapper">
       <div class="consent-text">
         <p> This web uses cookies to check traffic.
-          <a href="/en/admin/legal-notice.html" target="_blank" style="color: white; font-weight: bold;">More info here.</a>
+          <a href="/en/admin/cookies.html" target="_blank" style="color: white; font-weight: bold;">More info here.</a>
         </p>
       </div>
       <div class="consent-button block-hover negative">
@@ -223,60 +209,8 @@
   </div>
 
   <script src="/js/scripts.min.js"></script>
-  <script src="/js/customCookies.js"></script>
   <script src="/js/main.js"></script>
 
-  <!-- Google Analytics: change UA-XXXXX-Y to be your site's ID. -->
-  <script>
-    window.ga = function() {
-      ga.q.push(arguments)
-    };
-    ga.q = [];
-    ga.l = +new Date;
-    ga('create', 'UA-125435154-1', 'auto');
-    ga('send', 'pageview')
+  </body>
 
-    function PageScrollFix(x) {
-
-    // BARBA SCROLL FIX
-    setTimeout(function () {
-      $('html, body').animate({
-            scrollTop: $('#'+x).offset().top
-        }, 1000);
-    }, 500);
-  }
-
-  function setLanguage(x) {
-    $.cookie("LANGUAGE", x, {
-      path: '/',
-      expires: 365
-    });
-  }
-
-
-  </script>
-  <script src="https://www.google-analytics.com/analytics.js" async defer></script>
-  <script>
-
-  var preloader = document.getElementById('preloader');
-
-    window.onload = function() {
-      TweenMax.to($(preloader), 1, { left: "100%", ease: Expo.easeOut, onComplete: function() { $(preloader).remove();} });
-      TweenMax.to($(preloader), 1, { left: "100%", ease: Expo.easeOut, onComplete: function() { $(preloader).remove();} });
-    }
-
-  //   window.onload = function() {
-  //   if (sessionStorage.getItem('dontLoad') == null)
-  //     {
-  //       TweenMax.to($(preloader), 1, { left: "100%", ease: Expo.easeOut, onComplete: function() { $(preloader).remove();} });
-  //       TweenMax.to($(preloader), 1, { left: "100%", ease: Expo.easeOut, onComplete: function() { $(preloader).remove();} });
-  //       sessionStorage.setItem('dontLoad', 'true');
-  //     } else {
-  //       document.getElementById('preloader').remove();
-  //     }
-  // };
-
-  </script>
-</body>
-
-</html>
+  </html>
