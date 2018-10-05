@@ -506,15 +506,10 @@ $(document).ready(function() {
     _gaq.push(['_trackPageview']); // now run the pageview that you 'missed
   }
 
-  //*****************************
-  // SNIPPETS
-  //*****************************
 
-  //Update Google analytics
-
-  Barba.Dispatcher.on('initStateChange', function() {
-    ga('send', 'pageview', location.pathname);
-  });
+  //*****************************
+  // PRELOADER
+  //*****************************
 
   var preloader = $('.preloader');
   var isPreloading = true;
@@ -541,7 +536,19 @@ $(document).ready(function() {
         }
       });
     }
-  }, 2000);
+  }, 1500);
+
+
+  //*****************************
+  // SNIPPETS
+  //*****************************
+
+  //Update Google analytics
+
+  Barba.Dispatcher.on('initStateChange', function() {
+    ga('send', 'pageview', location.pathname);
+  });
+
 
   //Display Age
 
