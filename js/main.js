@@ -516,7 +516,7 @@ $(document).ready(function() {
     ga('send', 'pageview', location.pathname);
   });
 
-  var preloader = document.getElementById('preloader');
+  var preloader = $('.preloader');
   var isPreloading = true;
 
   window.onload = function() {
