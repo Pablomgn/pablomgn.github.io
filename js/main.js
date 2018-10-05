@@ -517,6 +517,7 @@ $(document).ready(function() {
   });
 
   var preloader = document.getElementById('preloader');
+  var isPreloading = true;
 
   window.onload = function() {
     TweenMax.to($(preloader), 1, {
@@ -524,16 +525,23 @@ $(document).ready(function() {
       ease: Expo.easeOut,
       onComplete: function() {
         $(preloader).remove();
-      }
-    });
-    TweenMax.to($(preloader), 1, {
-      left: "100%",
-      ease: Expo.easeOut,
-      onComplete: function() {
-        $(preloader).remove();
+        var isPreloading = false;
       }
     });
   };
+
+  setTimeout(function() {
+    if (isPreloading === true) {
+      TweenMax.to($(preloader), 1, {
+        left: "100%",
+        ease: Expo.easeOut,
+        onComplete: function() {
+          $(preloader).remove();
+          var isPreloading = false;
+        }
+      });
+    }
+  }, 2000);
 
   //Display Age
 
