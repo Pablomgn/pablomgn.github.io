@@ -525,6 +525,13 @@ $(document).ready(function() {
     });
   };
 
+  var preloaderTime;
+
+  if ($.cookie('LANGUAGE')) {
+    preloaderTime = 300;
+  } else {
+    preloaderTime = 1500;
+  }
   setTimeout(function() {
     if (isPreloading === true) {
       TweenMax.to($(preloader), 1, {
@@ -536,7 +543,8 @@ $(document).ready(function() {
         }
       });
     }
-  }, 1500);
+  }, preloaderTime);
+
 
 
   //*****************************
