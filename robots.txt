@@ -1,3 +1,4 @@
+Sitemap: https://www.pablomarin.es/sitemap.xml
 User-agent: *
 Disallow: /admin/
 Disallow: /en/admin/
