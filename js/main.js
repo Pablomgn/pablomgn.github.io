@@ -366,7 +366,7 @@ $(document).ready(function() {
     var contactText = $(".main-wrapper", ".color-panel");
     var fadeInContact = new ScrollMagic.Scene({
         triggerElement: ".color-panel",
-        triggerHook: 0.5,
+        triggerHook: 0.8,
         reverse: false
       })
       .setTween(TweenMax.from(contactText, 1, {
